@@ -13,14 +13,34 @@
       <p class="text header__text">NewsExplorer</p>
       <nav class="menu">
         <ul class="links header__links">
-          <li class="link header__link">Главная</li>
-          <li class="link header__link">Сохранённые статьи</li>
-          <li class="link header__link">Александр</li>
+          <li class="header__list-item header__list-item_isVisible">
+            <a class="link header__link header__link_isActive" href="#">Главная</a>
+          </li>
+          <li class="header__list-item">
+            <a class="link header__link" href="#">Сохранённые статьи</a>
+          </li>
+          <li class="header__list-item">
+            <a class="link header__link header__link_user" href="#"
+              >Александр&nbsp;<img
+                src="<%= require('./images/logout.svg') %>"
+                alt=""
+            /></a>
+          </li>
+          <li class="header__list-item header__list-item_isVisible">
+            <a class="link header__link header__link_user" href="#"
+              >Регистрация</a
+            >
+          </li>
         </ul>
       </nav>
     </header>
     <section class="search">
       <h1 class="title">Что в мире творится?</h1>
+      <h2 class="subtitle">Введите в поиске любую тему и узнайте, насколько популярной она была в новостях за прошедшую неделю.</h2>
+      <form action="#" class="search-form">
+        <input class="search-form__input" type="text">
+        <button class="search-form__button">Искать</button>
+      </form>
     </section>
     <script src="<%= htmlWebpackPlugin.files.js %>"></script>
   </body>
