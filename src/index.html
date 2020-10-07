@@ -12,33 +12,32 @@
     <header class="header">
       <p class="text header__text">NewsExplorer</p>
       <nav class="menu">
-        <ul class="links header__links">
+        <ul class="header__links">
           <li class="header__list-item header__list-item_isVisible">
             <a class="link header__link header__link_isActive" href="#"
               >Главная</a
             >
           </li>
-          <li class="header__list-item">
+          <li class="header__list-item header__list-item_isVisible">
             <a class="link header__link" href="#">Сохранённые статьи</a>
           </li>
-          <li class="header__list-item">
-            <a class="link header__link header__link_user" href="#"
-              >Александр&nbsp;<img
+          <li class="header__list-item header__list-item_isVisible">
+            <button class="button button_isVisible header__button">
+              Александр&nbsp;<img
                 src="<%= require('./images/logout.svg') %>"
                 alt=""
-            /></a>
+              />
+            </button>
           </li>
-          <li class="header__list-item header__list-item_isVisible">
-            <a class="link header__link header__link_user" href="#"
-              >Регистрация</a
-            >
+          <li class="header__list-item">
+            <button class="button header__button">Авторизоваться</button>
           </li>
         </ul>
       </nav>
     </header>
 
     <section class="search">
-      <h1 class="title">Что в мире творится?</h1>
+      <h1 class="title">Что творится в мире?</h1>
       <h2 class="search__subtitle">
         Введите в поиске любую тему и узнайте, насколько популярной она была в
         новостях за прошедшую неделю.
@@ -54,17 +53,32 @@
       <p class="preloader__text">Идет поиск новостей...</p>
     </section>
 
+    <section class="no-result">
+      <img
+        class="no-result__image"
+        src="<%= require('./images/not-found_v1.png') %>"
+        alt=""
+      />
+      <p class="no-result__title">Ничего не найдено</p>
+      <p class="no-result__text">
+        К сожалению по вашему запросу ничего не найдено.
+      </p>
+    </section>
+
     <section class="results">
       <h2 class="subtitle">Результаты поиска</h2>
 
       <div class="results__group">
         <div class="card">
-          <div class="card__image">
-            <p class="card__not-authorized card__not-authorized_isVisible">
-              Войдите, чтобы сохранять статьи
-            </p>
-            <div class="card__bookmark-icon card__bookmark-icon_liked"></div>
-          </div>
+          <img
+            class="card__image"
+            alt=""
+            src="<%= require('./images/image_08.png') %>"
+          />
+          <p class="card__not-authorized card__not-authorized_isVisible">
+            Войдите, чтобы сохранять статьи
+          </p>
+          <div class="card__bookmark-icon"></div>
           <p class="card__date">2 августа, 2019</p>
           <p class="card__title">Национальное достояние – парки</p>
           <p class="card__text">
@@ -76,37 +90,98 @@
         </div>
 
         <div class="card">
-          <div class="card__image">
-            <p class="card__not-authorized card__not-authorized_isVisible">
-              Войдите, чтобы сохранять статьи
-            </p>
-            <div class="card__bookmark-icon card__bookmark-icon_liked"></div>
-          </div>
+          <img
+            class="card__image"
+            alt=""
+            src="<%= require('./images/image_04.png') %>"
+          />
+          <p class="card__not-authorized">Войдите, чтобы сохранять статьи</p>
+          <div class="card__bookmark-icon card__bookmark-icon_liked"></div>
           <p class="card__date">2 августа, 2019</p>
-          <p class="card__title">Национальное достояние – парки</p>
+          <p class="card__title">Лесные огоньки: история одной фотографии</p>
           <p class="card__text">
-            В 2016 году Америка отмечала важный юбилей: сто лет назад здесь
-            начала складываться система национальных парков – охраняемых
-            территорий, где и сегодня каждый может приобщиться к природе.
+            Фотограф отвлеклась от освещения суровой политической реальности
+            Мексики, чтобы запечатлеть ускользающую красоту одного из местных
+            чудес природы.
           </p>
-          <p class="card__source">Лента.ру</p>
+          <p class="card__source">Медуза</p>
         </div>
         <div class="card">
-          <div class="card__image">
-            <p class="card__not-authorized card__not-authorized_isVisible">
-              Войдите, чтобы сохранять статьи
-            </p>
-            <div class="card__bookmark-icon card__bookmark-icon_liked"></div>
-          </div>
+          <img
+            class="card__image"
+            alt=""
+            src="<%= require('./images/image_07.png') %>"
+          />
+          <p class="card__not-authorized">Войдите, чтобы сохранять статьи</p>
+          <div class="card__bookmark-icon"></div>
           <p class="card__date">2 августа, 2019</p>
-          <p class="card__title">Национальное достояние – парки</p>
-          <p class="card__text">
-            В 2016 году Америка отмечала важный юбилей: сто лет назад здесь
-            начала складываться система национальных парков – охраняемых
-            территорий, где и сегодня каждый может приобщиться к природе.
+          <p class="card__title">
+            «Первозданная тайга»: новый фотопроект Игоря Шпиленка
           </p>
-          <p class="card__source">Лента.ру</p>
+          <p class="card__text">
+            Знаменитый фотограф снимает первозданные леса России, чтобы
+            рассказать о необходимости их сохранения. В этот раз он отправился в
+            Двинско-Пинежскую тайгу, где...
+          </p>
+          <p class="card__source">Риа</p>
         </div>
+      </div>
+      <button class="button button_isVisible results__button">
+        Показать еще
+      </button>
+    </section>
+
+    <section class="about">
+      <picture class="about__photo">
+        <source
+          srcset="<%= require('./images/about.png') %>"
+          media="(min-width: 1024px)"
+        />
+        <img src="<%= require('./images/about.png') %>" alt="фото автора" />
+      </picture>
+
+      <div class="about__group">
+        <h2 class="subtitle about__title">Об авторе</h2>
+        <p class="about__description">
+          Это блок с описанием автора проекта. Здесь следует указать, как вас
+          зовут, чем вы занимаетесь, какими технологиями разработки владеете.
+        </p>
+        <p class="about__description">
+          Также можно рассказать о процессе обучения в Практикуме, чему вы тут
+          научились, и чем можете помочь потенциальным заказчикам.
+        </p>
+      </div>
+    </section>
+
+    <section class="footer">
+      <p class="footer__copyright">© 2020 Supersite, Powered by News API</p>
+      <div class="footer__links">
+        <ul class="footer__menu">
+          <li class="footer__list-elem">
+            <a class="footer__link" href="/">Главная</a>
+          </li>
+          <li class="footer__list-elem">
+            <a
+              class="footer__link"
+              href="https://praktikum.yandex.ru"
+              target="_blank"
+              >Яндекс.Практикум</a
+            >
+          </li>
+        </ul>
+        <a class="footer__social" href=""
+          ><img
+            class="footer__social-icon"
+            src="<%= require('./images/github.svg') %>"
+            alt=""
+        /></a>
+        <a class="footer__social" href=""
+          ><img
+            class="footer__social-icon"
+            src="<%=
+          require('./images/VK_BlackWhite_Logo_transparent.png') %>"
+            alt=""
+        /></a>
       </div>
     </section>
 
