@@ -19,11 +19,11 @@
             >
           </li>
           <li class="header__list-item header__list-item_isVisible">
-            <a class="link header__link" href="#">Сохранённые статьи</a>
+            <a class="link header__link" href="./saved-news.html">Сохранённые статьи</a>
           </li>
           <li class="header__list-item header__list-item_isVisible">
             <button class="button button_isVisible header__button">
-              Александр&nbsp;<img
+              Александр<img class="header__logout-icon"
                 src="<%= require('./images/logout.svg') %>"
                 alt=""
               />
@@ -65,7 +65,7 @@
       </p>
     </section>
 
-    <section class="results">
+    <section class="results results_isVisible">
       <h2 class="subtitle">Результаты поиска</h2>
 
       <div class="results__group">
@@ -186,21 +186,57 @@
       </div>
     </section>
 
-    <div class="popup popup-signup popup_is-opened">
+    <div class="popup popup-signin">
       <div class="popup__content">
         <img src="<%=require('./images/close.svg')%>" alt="" class="popup__close popup-add-card__close">
         <h3 class="popup__title">Вход</h3>
-        <form class="popup__form" name="signup" id="form-signup">
+        <form class="popup__form" name="signin" id="form-signin">
           <label class="popup__label" for="email">Email</label>
           <input type="email" name="name" id="email" class="popup__input " placeholder="Введите почту" required>
-          <span class="error-messege" id="error-email"></span>
+          <span class="error-messege" id="error-email">1</span>
+
           <label class="popup__label" for="password">Пароль</label>
           <input name="password" type="password" class="popup__input"
             placeholder="Введите пароль" id="password" required>
-          <span class="error-messege" id="error-password"></span>
+          <span class="error-messege" id="error-password">2</span>
+
           <button type="submit" class="button popup__button button_isVisible">Войти</button>
           <p class="popup__text">или <button type="button" class="popup__reg-button">Зарегистрироваться</button> </p>
         </form>
+      </div>
+    </div>
+
+    <div class="popup popup-signup ">
+      <div class="popup__content">
+        <img src="<%=require('./images/close.svg')%>" alt="" class="popup__close popup-add-card__close">
+        <h3 class="popup__title">Регистрация</h3>
+        <form class="popup__form" name="signup" id="form-signup">
+          <label class="popup__label" for="email">Email</label>
+          <input type="email" name="name" id="email" class="popup__input " placeholder="Введите почту" required>
+          <span class="error-messege" id="error-email">1</span>
+
+          <label class="popup__label" for="password">Пароль</label>
+          <input name="password" type="password" class="popup__input"
+            placeholder="Введите пароль" id="password" required minlength="8">
+          <span class="error-messege" id="error-password">2</span>
+
+          <label class="popup__label" for="name">Имя</label>
+          <input name="name" type="text" class="popup__input"
+            placeholder="Введите своё имя" id="name" required minlength="2" maxlength="30">
+          <span class="error-messege" id="error-name">3</span>
+
+          <span class="error-messege popup-signup__duble-error" id="error-name">Такой пользователь уже есть</span>
+          <button type="submit" class="button popup__button button_isVisible">Зарегистрироваться</button>
+          <p class="popup__text">или <button type="button" class="popup__reg-button">Войти</button> </p>
+        </form>
+      </div>
+    </div>
+
+    <div class="popup popup-registered">
+      <div class="popup__content popup-registered__content">
+        <img src="<%=require('./images/close.svg')%>" alt="" class="popup__close popup-add-card__close">
+        <h3 class="popup__title">Пользователь успешно зарегистрирован!</h3>
+          <button type="button" class="popup__reg-button popup-registered__button">Войти</button>
       </div>
     </div>
 

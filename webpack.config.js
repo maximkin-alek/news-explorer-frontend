@@ -5,7 +5,9 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = {
-  entry: { main: './src/Scripts/index.js' },
+  entry: [
+    './src/Scripts/index.js',
+    './src/Scripts/saved-news.js'],
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].[chunkhash].js',
@@ -62,6 +64,11 @@ module.exports = {
       inject: false,
       template: './src/index.html',
       filename: 'index.html',
+    }),
+    new HtmlWebpackPlugin({
+      inject: false,
+      template: './src/saved-news.html',
+      filename: 'saved-news.html',
     }),
     new WebpackMd5Hash(),
   ],
