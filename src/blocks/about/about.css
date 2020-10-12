@@ -8,4 +8,12 @@
   padding: 80px 104px;
   display: flex;
   background: #FFFFFF;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 950px) {
+  .about {
+    min-height: 354px;
+    padding: 61px 40px;
+  }
 }

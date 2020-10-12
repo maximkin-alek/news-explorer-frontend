@@ -8,3 +8,9 @@
   margin: 0;
   padding: 24px 0 0;
 }
+
+@media screen and (max-width: 950px) {
+  .about__description {
+    padding: 16px 0 0;
+  }
+}

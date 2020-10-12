@@ -2,6 +2,13 @@
   width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  column-gap: 16px;
+  gap: 16px;
   border: none;
+}
+
+@media screen and (max-width: 800px) {
+  .results__group {
+    grid-template-columns: repeat(auto-fill, minmax(224px, 1fr));
+    gap: 8px;
+  }
 }

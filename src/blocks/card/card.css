@@ -13,3 +13,10 @@
   position: relative;
   text-decoration: none;
 }
+
+@media screen and (max-width: 800px) {
+  .card {
+    width: 224px;
+    height: 420px;
+  }
+}

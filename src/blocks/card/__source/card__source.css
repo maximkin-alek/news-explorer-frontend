@@ -12,3 +12,10 @@
   bottom: 24px;
   margin: 0;
 }
+
+@media screen and (max-width: 800px) {
+  .card__source {
+    left: 16px;
+    bottom: 16px;
+  }
+}

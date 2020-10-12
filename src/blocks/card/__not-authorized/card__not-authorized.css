@@ -1,5 +1,4 @@
 @import url(./_isVisible/card__not-authorized_isVisible.css);
-
 .card__not-authorized {
   width: 182px;
   height: 40px;
@@ -19,4 +18,13 @@
   justify-content: center;
   display: none;
   cursor: default;
+}
+
+@media screen and (max-width: 800px) {
+  .card__not-authorized {
+    width: 165px;
+    height: 40px;
+    top: -2px;
+    right: 54px;
+  }
 }

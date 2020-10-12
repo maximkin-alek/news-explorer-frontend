@@ -1,5 +1,4 @@
 @import url(./_liked/card__bookmark-icon_liked.css);
-
 .card__bookmark-icon {
   position: absolute;
   top: 24px;
@@ -12,4 +11,11 @@
 
 .card__bookmark-icon:hover {
   background: url(../../../images/bookmark-hover.svg);
+}
+
+@media screen and (max-width: 800px) {
+  .card__bookmark-icon {
+    top: 8px;
+    right: 8px;
+  }
 }
