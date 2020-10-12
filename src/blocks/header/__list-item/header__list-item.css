@@ -1,0 +1,17 @@
+@import url(./_isVisible/header__list-item_isVisible.css);
+
+.header__list-item {
+  display: none;
+  list-style: none;
+  margin-right: 32px;
+}
+
+.header__list-item:last-child {
+  margin-right: 0;
+}
+
+@media screen and (max-width: 900px) {
+  .header__list-item {
+    margin-right: 16px;
+  }
+}

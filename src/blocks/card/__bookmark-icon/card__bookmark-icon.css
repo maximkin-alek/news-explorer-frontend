@@ -1,0 +1,15 @@
+@import url(./_liked/card__bookmark-icon_liked.css);
+
+.card__bookmark-icon {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  background: url(../../../images/bookmark.svg);
+}
+
+.card__bookmark-icon:hover {
+  background: url(../../../images/bookmark-hover.svg);
+}

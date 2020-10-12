@@ -1,0 +1,38 @@
+.card__delete-icon {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  background: url(../../../images/delete-icon.svg);
+}
+
+.card__delete-icon:hover {
+  background: url(../../../images/delete-icon-hover.svg);
+}
+
+.card__delete-icon::before {
+  content: "Убрать из сохранённых";
+  width: 159px;
+  height: 40px;
+  position: absolute;
+  top: 0 px;
+  right: 45px;
+  background: #FFFFFF;
+  border-radius: 10px;
+  color: black;
+  font-family: Roboto, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+}
+
+.card__delete-icon:hover::before {
+  display: flex;
+}

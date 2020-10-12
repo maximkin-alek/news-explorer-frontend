@@ -1,0 +1,15 @@
+@import url(./__input/search-form__input.css);
+@import url(./__button/search-form__button.css);
+.search-form {
+  width: 608px;
+  height: 64px;
+  position: relative;
+  margin:  auto;
+}
+
+@media screen and (max-width: 800px) {
+  .search-form {
+    width: 448px;
+    height: 56px;
+  }
+}

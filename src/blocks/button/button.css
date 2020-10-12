@@ -1,0 +1,23 @@
+@import url(./_isVisible/button_isVisible.css);
+.button {
+  cursor: pointer;
+  text-decoration: none;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+
+.button:active, .button:focus {
+  outline: none;
+}
+
+@media screen and (max-width: 900px) {
+  .button {
+    font-size: 16px;
+  }
+}

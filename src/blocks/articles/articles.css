@@ -1,0 +1,10 @@
+@import url(./__text/articles__text.css);
+@import url(./__subtitle/articles__subtitle.css);
+@import url(./__keywords/articles__keywords.css);
+@import url(./__keyword/articles__keyword.css);
+@import url(./__card-group/articles__card-group.css);
+.articles {
+  max-width: 100%;
+  background: white;
+  padding-left: 104px;
+}

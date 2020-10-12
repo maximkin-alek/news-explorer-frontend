@@ -1,0 +1,7 @@
+.results__group {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  column-gap: 16px;
+  border: none;
+}

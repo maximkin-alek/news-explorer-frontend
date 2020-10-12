@@ -1,0 +1,7 @@
+.footer__social {
+  margin-right: 25px;
+}
+
+.footer__social:last-of-type {
+  margin-right: 0;
+}

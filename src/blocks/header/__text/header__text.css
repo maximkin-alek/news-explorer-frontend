@@ -1,0 +1,10 @@
+@import url(./_white-theme/header__text_white-theme.css);
+
+.header__text {
+  width: 200px;
+  font-family: Roboto Slab, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 24px;
+}

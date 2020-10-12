@@ -1,0 +1,11 @@
+@import url(./__group/about__group.css);
+@import url(./__photo/about__photo.css);
+@import url(./__title/about__title.css);
+@import url(./__description/about__description.css);
+.about {
+  max-width: 100%;
+  min-height: 624px;
+  padding: 80px 104px;
+  display: flex;
+  background: #FFFFFF;
+}

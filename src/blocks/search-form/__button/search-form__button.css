@@ -1,0 +1,32 @@
+.search-form__button {
+  background: #2F71E5;
+  box-shadow: 0px 5px 15px rgba(14, 26, 57, 0.2);
+  border-radius: 100px;
+  width: 168px;
+  height: 64px;
+  position: absolute;
+  top: 64px;
+  left: 441px;
+  transition: background 0.3s ease;
+}
+
+.search-form__button:hover {
+  background: #347EFF;
+}
+
+.search-form__button:active {
+  background: #2A65CC;
+}
+
+.search-form__button:focus {
+  outline: none;
+}
+
+@media screen and (max-width: 800px) {
+  .search-form__button {
+    width: 160px;
+    height: 56px;
+    top: 48px;
+    left: 288px;
+  }
+}

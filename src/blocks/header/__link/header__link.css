@@ -1,0 +1,17 @@
+@import url(./_isActive/header__link_isActive.css);
+@import url(./_white-theme/header__link_white-theme.css);
+.header__link {
+  color: #B6BCBF;
+  font-family: Roboto, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  position: relative;
+}
+
+@media screen and (max-width: 900px) {
+  .header__link {
+    font-size: 16px;
+  }
+}

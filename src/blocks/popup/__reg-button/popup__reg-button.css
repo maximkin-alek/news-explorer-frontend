@@ -1,0 +1,17 @@
+.popup__reg-button {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #2F71E5;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+}
+
+.popup__reg-button:active, .popup__reg-button:focus {
+  outline: none;
+}

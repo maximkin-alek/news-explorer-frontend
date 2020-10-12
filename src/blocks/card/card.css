@@ -1,0 +1,15 @@
+@import url(__image/card__image.css);
+@import url(__bookmark-icon/card__bookmark-icon.css);
+@import url(__date/card__date.css);
+@import url(__title/card__title.css);
+@import url(__text/card__text.css);
+@import url(__source/card__source.css);
+@import url(__not-authorized/card__not-authorized.css);
+@import url(__theme/card__theme.css);
+@import url(__delete-icon/card__delete-icon.css);
+.card {
+  width: 400px;
+  height: 576px;
+  position: relative;
+  text-decoration: none;
+}
