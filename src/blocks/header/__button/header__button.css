@@ -1,5 +1,4 @@
 @import url(./_white-theme/header__button_white-theme.css);
-
 .header__button {
   height: 48px;
   border: 1px solid #FFFFFF;
@@ -12,3 +11,15 @@
   color: #FFFFFF;
 }
 
+@media screen and (max-width: 1200px) {
+  .header__button {
+    height: 40px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .header__button {
+    width: 288px;
+    height: 56px;
+  }
+}

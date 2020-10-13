@@ -2,6 +2,8 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description" content="Сервис поиска новостей" />
     <meta name="author" content="Александр Максимкин" />
     <title>News-explorer</title>
@@ -11,11 +13,11 @@
   <body class="body">
     <header class="header">
       <p class="text header__text">NewsExplorer</p>
-      <nav class="menu">
+      <nav class="header__menu">
         <ul class="header__links">
           <!-- Для отображения пунктов меню необходимо использовать модификатор  header__list-item_isVisible -->
           <li class="header__list-item header__list-item_isVisible">
-            <a class="link header__link header__link_isActive" href="#"
+            <a class="link header__link header__link_isActive" href="/"
               >Главная</a
             >
           </li>
@@ -36,6 +38,27 @@
           </li>
         </ul>
       </nav>
+      <div class="header__mobile-button"></div>
+      <ul class="header__mobile-menu"><li class="header__list-item header__list-item_isVisible">
+        <a class="link header__link" href="/"
+          >Главная</a
+        >
+      </li>
+        <li class="header__list-item header__list-item_isVisible">
+          <a class="link header__link" href="./saved-news.html">Сохранённые статьи</a>
+        </li>
+        <li class="header__list-item header__list-item_isVisible">
+          <!-- Для отображения кнопок необходимо использовать модификатор button_isVisible -->
+          <button class="button button_isVisible header__button">
+            Александр<img class="header__logout-icon"
+              src="<%= require('./images/logout.svg') %>"
+              alt=""
+            />
+          </button>
+        </li>
+        <li class="header__list-item">
+          <button class="button header__button">Авторизоваться</button>
+        </li></ul>
     </header>
 
     <section class="search">

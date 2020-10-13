@@ -36,3 +36,13 @@
 .card__delete-icon:hover::before {
   display: flex;
 }
+
+@media screen and (max-width: 800px) {
+  .card__delete-icon {
+    top: 8px;
+    right: 8px;
+  }
+  .card__delete-icon:hover::before {
+    display: none;
+  }
+}

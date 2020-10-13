@@ -4,7 +4,15 @@
   width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  column-gap: 16px;
+  gap: 16px;
   border: none;
   padding-top: 118px;
+}
+
+@media screen and (max-width: 800px) {
+  .articles__card-group {
+    grid-template-columns: repeat(auto-fill, minmax(224px, 1fr));
+    gap: 8px;
+    padding-top: 32px;
+  }
 }

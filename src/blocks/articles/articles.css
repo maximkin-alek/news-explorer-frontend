@@ -9,3 +9,10 @@
   padding-left: 104px;
   padding-bottom: 62px;
 }
+
+@media screen and (max-width: 800px) {
+  .articles {
+    padding-left: 40px;
+    padding-bottom: 48px;
+  }
+}

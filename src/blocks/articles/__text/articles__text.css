@@ -8,3 +8,11 @@
   padding-top: 120px;
   margin: 0;
 }
+
+@media screen and (max-width: 900px) {
+  .articles__text {
+    font-size: 14px;
+    line-height: 24px;
+    padding-top: 90px;
+  }
+}

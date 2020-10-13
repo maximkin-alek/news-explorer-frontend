@@ -2,3 +2,10 @@
   width: 464px;
   height: 464px;
 }
+
+@media screen and (max-width: 950px) {
+  .about__photo {
+    width: auto;
+  height: auto;
+  }
+}

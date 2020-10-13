@@ -18,3 +18,10 @@
   cursor: default;
   margin: 0;
 }
+
+@media screen and (max-width: 800px) {
+  .card__theme {
+    top: 8px;
+  left: 8px;
+  }
+}

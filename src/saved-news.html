@@ -2,6 +2,8 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="description" content="Сервис поиска новостей" />
     <meta name="author" content="Александр Максимкин" />
     <title>News-explorer</title>
@@ -9,9 +11,9 @@
     <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.css %>" />
   </head>
   <body>
-    <header class="header">
+    <header class="header header_white-theme">
       <p class="header__text header__text_white-theme">NewsExplorer</p>
-      <nav class="menu">
+      <nav class="header__menu">
         <ul class="header__links">
           <li class="header__list-item header__list-item_isVisible">
             <a
@@ -43,6 +45,7 @@
           </li>
         </ul>
       </nav>
+      <div class="header__mobile-button header__mobile-button_white-theme"></div>
     </header>
 
     <section class="articles">

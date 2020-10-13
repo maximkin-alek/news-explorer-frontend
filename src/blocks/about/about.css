@@ -14,6 +14,7 @@
 @media screen and (max-width: 950px) {
   .about {
     min-height: 354px;
-    padding: 61px 40px;
+    padding: 0 40px;
+    justify-content: space-between;
   }
 }

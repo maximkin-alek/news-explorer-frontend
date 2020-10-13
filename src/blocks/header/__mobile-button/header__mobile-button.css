@@ -1,0 +1,13 @@
+.header__mobile-button {
+  width: 24px;
+  height: 24px;
+  background-image: url(../../../images/mobile-menu-closed.svg);
+  display: none;
+}
+
+@media screen and (max-width: 650px) {
+  .header__mobile-button {
+    display: block;
+    cursor: pointer;
+  }
+}

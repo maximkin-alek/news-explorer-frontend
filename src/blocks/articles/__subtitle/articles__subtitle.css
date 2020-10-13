@@ -3,3 +3,12 @@
   padding-top: 28px;
   max-width: 530px;
 }
+
+@media screen and (max-width: 900px) {
+  .articles__subtitle {
+    font-size: 30px;
+    line-height: 34px;
+    max-width: 338px;
+    padding-top: 16px;
+  }
+}

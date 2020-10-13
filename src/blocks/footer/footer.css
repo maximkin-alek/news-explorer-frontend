@@ -5,7 +5,6 @@
 @import url(./__link/footer__link.css);
 @import url(./__list-elem/footer__list-elem.css);
 @import url(./__social/footer__social.css);
-
 .footer {
   width: 100%;
   min-height: 80px;
@@ -15,4 +14,11 @@
   background: #FFFFFF;
   padding: 0 104px;
   box-sizing: border-box;
+}
+
+@media screen and (max-width: 950px) {
+  .footer {
+    min-height: 64px;
+    padding: 0 40px;
+  }
 }

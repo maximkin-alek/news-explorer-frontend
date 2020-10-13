@@ -4,7 +4,10 @@
 @import url(./__list-item/header__list-item.css);
 @import url(./__button/header__button.css);
 @import url(./__logout-icon/header__logout-icon.css);
-
+@import url(./_white-theme/header_white-theme.css);
+@import url(./__menu/header__menu.css);
+@import url(./__mobile-button/header__mobile-button.css);
+@import url(./__mobile-menu/header__mobile-menu.css);
 .header {
   position: absolute;
   top: 0;
@@ -22,6 +25,16 @@
 
 @media screen and (max-width: 1200px) {
   .header {
+    min-height: 66px;
+    height: 66px;
     padding: 0 40px 0;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .header {
+    min-height: 56px;
+    height: 56px;
+    padding: 0 16px 0;
   }
 }
