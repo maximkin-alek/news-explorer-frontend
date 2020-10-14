@@ -10,3 +10,11 @@
     margin: 0 30px 0 0;
   }
 }
+
+@media screen and (max-width: 550px) {
+  .footer__menu {
+    flex-direction: column;
+    min-width: 200px;
+    margin: 0 10px 0 0;
+  }
+}

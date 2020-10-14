@@ -19,3 +19,10 @@
     right: 8px;
   }
 }
+
+@media screen and (max-width: 5400px) {
+  .card__bookmark-icon {
+    top: 16px;
+    right: 16px;
+  }
+}

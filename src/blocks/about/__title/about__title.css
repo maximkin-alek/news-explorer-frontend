@@ -7,3 +7,8 @@
     line-height: 40px;
   }
 }
+@media screen and (max-width: 550px) {
+  .about__title {
+    margin-top: 24px;
+  }
+}

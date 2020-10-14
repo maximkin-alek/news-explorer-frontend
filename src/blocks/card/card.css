@@ -20,3 +20,11 @@
     height: 420px;
   }
 }
+
+@media screen and (max-width: 540px) {
+  .card {
+    width: 288px;
+    height: 440px;
+    margin: 0 auto;
+  }
+}

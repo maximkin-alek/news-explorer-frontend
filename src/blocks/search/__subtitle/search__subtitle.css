@@ -16,3 +16,10 @@
     margin: 16px auto 0;
   }
 }
+
+@media screen and (max-width: 600px) {
+  .search__subtitle {
+    max-width: 288px;
+    margin: 16px auto 0;
+  }
+}

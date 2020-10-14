@@ -12,3 +12,11 @@
     gap: 8px;
   }
 }
+
+@media screen and (max-width: 550px) {
+  .results__group {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+

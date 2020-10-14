@@ -13,3 +13,10 @@
     line-height: 34px;
   }
 }
+
+@media screen and (max-width: 540px) {
+  .subtitle {
+    margin: 32px auto 24px;
+    margin-left: 16px;
+  }
+}

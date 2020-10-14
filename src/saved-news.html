@@ -45,7 +45,32 @@
           </li>
         </ul>
       </nav>
-      <div class="header__mobile-button header__mobile-button_white-theme"></div>
+      <div
+        class="header__mobile-button header__mobile-button_white-theme"
+      ></div>
+      <ul class="header__mobile-menu">
+        <li class="header__list-item header__list-item_isVisible">
+          <a class="link header__link" href="/">Главная</a>
+        </li>
+        <li class="header__list-item header__list-item_isVisible">
+          <a class="link header__link" href="./saved-news.html"
+            >Сохранённые статьи</a
+          >
+        </li>
+        <li class="header__list-item header__list-item_isVisible">
+          <!-- Для отображения кнопок необходимо использовать модификатор button_isVisible -->
+          <button class="button button_isVisible header__button">
+            Александр<img
+              class="header__logout-icon"
+              src="<%= require('./images/logout.svg') %>"
+              alt=""
+            />
+          </button>
+        </li>
+        <li class="header__list-item">
+          <button class="button header__button">Авторизоваться</button>
+        </li>
+      </ul>
     </header>
 
     <section class="articles">

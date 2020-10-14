@@ -19,3 +19,13 @@
     max-height: 80px;
   }
 }
+
+@media screen and (max-width: 600px) {
+  .title {
+    padding-top: 86px;
+    font-size: 36px;
+    line-height: 40px;
+    max-width: 285px;
+    margin: 0 auto;
+  }
+}

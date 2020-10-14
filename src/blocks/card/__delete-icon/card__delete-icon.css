@@ -46,3 +46,13 @@
     display: none;
   }
 }
+
+@media screen and (max-width: 550px) {
+  .card__delete-icon {
+    top: 16px;
+    right: 16px;
+  }
+  .card__delete-icon:hover::before {
+    display: none;
+  }
+}

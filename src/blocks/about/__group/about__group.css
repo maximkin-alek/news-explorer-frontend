@@ -11,3 +11,8 @@
     padding-top: 0;
   }
 }
+@media screen and (max-width: 550px) {
+  .about__group {
+    padding: 16px;
+  }
+}

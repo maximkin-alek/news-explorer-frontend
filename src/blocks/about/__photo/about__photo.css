@@ -6,6 +6,14 @@
 @media screen and (max-width: 950px) {
   .about__photo {
     width: auto;
-  height: auto;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .about__photo {
+    width: 272px;
+    height: 272px;
+    margin: 0 auto;
   }
 }

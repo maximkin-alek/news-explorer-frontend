@@ -22,3 +22,11 @@
     padding: 0 40px;
   }
 }
+@media screen and (max-width: 550px) {
+  .footer {
+    flex-direction: column-reverse;
+    align-items: start;
+    padding: 0 16px;
+    padding-bottom: 20px;
+  }
+}

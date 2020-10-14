@@ -4,12 +4,19 @@
   width: 608px;
   height: 64px;
   position: relative;
-  margin:  auto;
+  margin: 0 auto;
 }
 
 @media screen and (max-width: 800px) {
   .search-form {
     width: 448px;
     height: 56px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .search-form {
+    width: 288px;
+    height: auto;
   }
 }

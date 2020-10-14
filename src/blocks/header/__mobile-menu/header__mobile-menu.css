@@ -1,3 +1,5 @@
+@import url(./_isVisible/header__mobile-menu_isVisible.css);
+
 .header__mobile-menu {
   width: 100%;
   position: absolute;
@@ -7,7 +9,7 @@
   z-index: 2;
   height: 230px;
   margin: 0;
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;

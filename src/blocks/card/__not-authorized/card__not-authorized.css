@@ -28,3 +28,12 @@
     right: 54px;
   }
 }
+
+@media screen and (max-width: 540px) {
+  .card__not-authorized {
+    width: 165px;
+    height: 40px;
+    top: 6px;
+    right: 64px;
+  }
+}
