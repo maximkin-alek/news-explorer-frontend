@@ -2,8 +2,8 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="description" content="Сервис поиска новостей" />
     <meta name="author" content="Александр Максимкин" />
     <title>News-explorer</title>
@@ -17,19 +17,24 @@
         <ul class="header__links">
           <!-- Для отображения пунктов меню необходимо использовать модификатор  header__list-item_isVisible -->
           <li class="header__list-item header__list-item_isVisible">
-            <a class="link header__link header__link_isActive" href="/"
+            <a
+              class="link header__link header__link_isActive"
+              href="./index.html"
               >Главная</a
             >
           </li>
           <li class="header__list-item header__list-item_isVisible">
-            <a class="link header__link" href="./saved-news.html">Сохранённые статьи</a>
+            <a class="link header__link" href="./saved-news.html"
+              >Сохранённые статьи</a
+            >
           </li>
           <li class="header__list-item header__list-item_isVisible">
             <!-- Для отображения кнопок необходимо использовать модификатор button_isVisible -->
             <button class="button button_isVisible header__button">
-              Александр<img class="header__logout-icon"
+              Александр<img
+                class="header__logout-icon"
                 src="<%= require('./images/logout.svg') %>"
-                alt=""
+                alt="иконка выхода"
               />
             </button>
           </li>
@@ -42,56 +47,65 @@
       <div class="header__mobile-button header__mobile-button_open"></div>
       <!-- Отображение мобильного меню с помощью модификатора  header__mobile-menu_isVisible
       При открытии мобильного меню хедеру будет задаваться черный фон средствами JS-->
-      <ul class="header__mobile-menu"><li class="header__list-item header__list-item_isVisible">
-        <a class="link header__link" href="/"
-          >Главная</a
-        >
-      </li>
+      <ul class="header__mobile-menu header__mobile-menu_isVisible">
         <li class="header__list-item header__list-item_isVisible">
-          <a class="link header__link" href="./saved-news.html">Сохранённые статьи</a>
+          <a class="link header__link" href="./index.html">Главная</a>
+        </li>
+        <li class="header__list-item header__list-item_isVisible">
+          <a class="link header__link" href="./saved-news.html"
+            >Сохранённые статьи</a
+          >
         </li>
         <li class="header__list-item header__list-item_isVisible">
           <!-- Для отображения кнопок необходимо использовать модификатор button_isVisible -->
           <button class="button button_isVisible header__button">
-            Александр<img class="header__logout-icon"
+            Александр<img
+              class="header__logout-icon"
               src="<%= require('./images/logout.svg') %>"
-              alt=""
+              alt="иконка выхода"
             />
           </button>
         </li>
         <li class="header__list-item">
           <button class="button header__button">Авторизоваться</button>
-        </li></ul>
+        </li>
+      </ul>
     </header>
 
     <section class="search">
       <h1 class="title">Что творится в мире?</h1>
       <h2 class="search__subtitle">
-        Находите самые свежие статьи на любую тему и сохраняйте в своём личном кабинете.
+        Находите самые свежие статьи на любую тему и сохраняйте в своём личном
+        кабинете.
       </h2>
       <form action="#" class="search-form">
-        <input class="search-form__input" type="text" required placeholder="Политика"/>
+        <input
+          class="search-form__input"
+          type="text"
+          required
+          placeholder="Политика"
+        />
         <button class="search-form__button">Искать</button>
       </form>
     </section>
- <!-- Отображение прелоудера с помощью модификатора  preloader_open-->
+    <!-- Отображение прелоудера с помощью модификатора  preloader_open-->
     <section class="preloader">
       <i class="preloader__circle"></i>
       <p class="preloader__text">Идет поиск новостей...</p>
     </section>
-<!-- Отображения секции "без результатов" с помощью модификатора  no-result_isVisible-->
+    <!-- Отображения секции "без результатов" с помощью модификатора  no-result_isVisible-->
     <section class="no-result">
       <img
         class="no-result__image"
         src="<%= require('./images/not-found_v1.png') %>"
-        alt=""
+        alt="Ничего не найдено"
       />
       <p class="no-result__title">Ничего не найдено</p>
       <p class="no-result__text">
         К сожалению по вашему запросу ничего не найдено.
       </p>
     </section>
-<!-- Отобрнажение секции "результаты поиска с помощью модификатора results_isVisible" -->
+    <!-- Отобрнажение секции "результаты поиска с помощью модификатора results_isVisible" -->
     <section class="results results_isVisible">
       <h2 class="subtitle">Результаты поиска</h2>
 
@@ -120,7 +134,7 @@
         <a class="card" href="#">
           <img
             class="card__image"
-            alt=""
+            alt="Иллюстрация новостной статьи"
             src="<%= require('./images/image_04.png') %>"
           />
           <p class="card__not-authorized">Войдите, чтобы сохранять статьи</p>
@@ -139,7 +153,7 @@
         <a class="card" href="#">
           <img
             class="card__image"
-            alt=""
+            alt="Иллюстрация новостной статьи"
             src="<%= require('./images/image_07.png') %>"
           />
           <p class="card__not-authorized">Войдите, чтобы сохранять статьи</p>
@@ -154,12 +168,12 @@
             Двинско-Пинежскую тайгу, где...
           </p>
           <p class="card__source">Риа</p>
-        </div>
-      </a>
-      <!-- Отображение кнопки регулируется модификатором button_isVisible -->
-      <button class="button button_isVisible results__button">
-        Показать еще
-      </button>
+        </a>
+        <!-- Отображение кнопки регулируется модификатором button_isVisible -->
+        <button class="button button_isVisible results__button">
+          Показать еще
+        </button>
+      </div>
     </section>
 
     <section class="about">
@@ -167,12 +181,10 @@
         <source
           media="(max-width: 550px)"
           srcset="<%= require('./images/image-320px.png') %>"
-
         />
         <source
           media="(max-width: 950px)"
           srcset="<%= require('./images/image-03.png') %>"
-
         />
 
         <img src="<%= require('./images/about.png') %>" alt="фото автора" />
@@ -196,7 +208,7 @@
       <div class="footer__links">
         <ul class="footer__menu">
           <li class="footer__list-elem">
-            <a class="footer__link" href="/">Главная</a>
+            <a class="footer__link" href="./index.html">Главная</a>
           </li>
           <li class="footer__list-elem">
             <a
@@ -207,7 +219,10 @@
             >
           </li>
         </ul>
-        <a class="footer__social" href="https://github.com/maximkin-alek" target="_blank"
+        <a
+          class="footer__social"
+          href="https://github.com/maximkin-alek"
+          target="_blank"
           ><img
             class="footer__social-icon"
             src="<%= require('./images/github.svg') %>"
@@ -222,62 +237,127 @@
         /></a>
       </div>
     </section>
-<!-- Для отображения попапа необходимо добавить модификатор popup_is-opened -->
-    <div class="popup popup-signin ">
+    <!-- Для отображения попапа необходимо добавить модификатор popup_is-opened -->
+    <div class="popup popup-signin">
       <div class="popup__content">
-        <img src="<%=require('./images/close.svg')%>" alt="Закрыть форму" class="popup__close popup-add-card__close">
+        <img
+          src="<%=require('./images/close.svg')%>"
+          alt="Закрыть форму"
+          class="popup__close popup-add-card__close"
+        />
         <h3 class="popup__title">Вход</h3>
         <form class="popup__form" name="signin" id="form-signin">
-          <label class="popup__label" for="email">Email</label>
-          <input type="email" name="name" id="email" class="popup__input " placeholder="Введите почту" required>
+          <label class="popup__label" for="signin-email">Email</label>
+          <input
+            type="email"
+            name="name"
+            id="signin-email"
+            class="popup__input"
+            placeholder="Введите почту"
+            required
+          />
           <!--для отображения ошибки необходимо ввести текст в поле span  -->
-          <span class="error-messege" id="error-email">1</span>
-          <label class="popup__label" for="password">Пароль</label>
-          <input name="password" type="password" class="popup__input"
-            placeholder="Введите пароль" id="password" required>
+          <span class="error-messege" id="error-signin-email">1</span>
+          <label class="popup__label" for="signin-password">Пароль</label>
+          <input
+            name="password"
+            type="password"
+            class="popup__input"
+            placeholder="Введите пароль"
+            id="signin-password"
+            required
+          />
           <!-- для отображения ошибки необходимо ввести текст в поле span -->
-          <span class="error-messege" id="error-password">2</span>
+          <span class="error-messege" id="error-signin-password">2</span>
 
-          <button type="submit" class="button popup__button button_isVisible">Войти</button>
-          <p class="popup__text">или <button type="button" class="popup__reg-button">Зарегистрироваться</button> </p>
+          <button type="submit" class="button popup__button button_isVisible">
+            Войти
+          </button>
+          <p class="popup__text">
+            или
+            <button type="button" class="popup__reg-button">
+              Зарегистрироваться
+            </button>
+          </p>
         </form>
       </div>
     </div>
-<!-- Для отображения попапа необходимо добавить модификатор popup_is-opened -->
-    <div class="popup popup-signup ">
+    <!-- Для отображения попапа необходимо добавить модификатор popup_is-opened -->
+    <div class="popup popup-signup">
       <div class="popup__content">
-        <img src="<%=require('./images/close.svg')%>" alt="Закрыть форму" class="popup__close popup-add-card__close">
+        <img
+          src="<%=require('./images/close.svg')%>"
+          alt="Закрыть форму"
+          class="popup__close popup-add-card__close"
+        />
         <h3 class="popup__title">Регистрация</h3>
         <form class="popup__form" name="signup" id="form-signup">
-          <label class="popup__label" for="email">Email</label>
-          <input type="email" name="name" id="email" class="popup__input " placeholder="Введите почту" required>
-           <!--для отображения ошибки необходимо ввести текст в поле span  -->
-          <span class="error-messege" id="error-email">1</span>
-
-          <label class="popup__label" for="password">Пароль</label>
-          <input name="password" type="password" class="popup__input"
-            placeholder="Введите пароль" id="password" required minlength="8">
-           <!--для отображения ошибки необходимо ввести текст в поле span  -->
-          <span class="error-messege" id="error-password">2</span>
-
-          <label class="popup__label" for="name">Имя</label>
-          <input name="name" type="text" class="popup__input"
-            placeholder="Введите своё имя" id="name" required minlength="2" maxlength="30">
-           <!--для отображения ошибки необходимо ввести текст в поле span  -->
-          <span class="error-messege" id="error-name">3</span>
+          <label class="popup__label" for="signup-email">Email</label>
+          <input
+            type="email"
+            name="name"
+            id="signup-email"
+            class="popup__input"
+            placeholder="Введите почту"
+            required
+          />
           <!--для отображения ошибки необходимо ввести текст в поле span  -->
-          <span class="error-messege popup-signup__duble-error" id="error-name">Такой пользователь уже есть</span>
-          <button type="submit" class="button popup__button button_isVisible">Зарегистрироваться</button>
-          <p class="popup__text">или <button type="button" class="popup__reg-button">Войти</button> </p>
+          <span class="error-messege" id="error-signup-email">1</span>
+
+          <label class="popup__label" for="signup-password">Пароль</label>
+          <input
+            name="password"
+            type="password"
+            class="popup__input"
+            placeholder="Введите пароль"
+            id="signup-password"
+            required
+            minlength="8"
+          />
+          <!--для отображения ошибки необходимо ввести текст в поле span  -->
+          <span class="error-messege" id="error-signup-password">2</span>
+
+          <label class="popup__label" for="signup-name">Имя</label>
+          <input
+            name="name"
+            type="text"
+            class="popup__input"
+            placeholder="Введите своё имя"
+            id="signup-name"
+            required
+            minlength="2"
+            maxlength="30"
+          />
+          <!--для отображения ошибки необходимо ввести текст в поле span  -->
+          <span class="error-messege" id="error-signup-name">3</span>
+          <!--для отображения ошибки необходимо ввести текст в поле span  -->
+          <span class="error-messege popup-signup__duble-error" id="duble-error"
+            >Такой пользователь уже есть</span
+          >
+          <button type="submit" class="button popup__button button_isVisible">
+            Зарегистрироваться
+          </button>
+          <p class="popup__text">
+            или <button type="button" class="popup__reg-button">Войти</button>
+          </p>
         </form>
       </div>
     </div>
-<!-- Для отображения попапа необходимо добавить модификатор popup_is-opened -->
-    <div class="popup popup-registered ">
+    <!-- Для отображения попапа необходимо добавить модификатор popup_is-opened -->
+    <div class="popup popup-registered">
       <div class="popup__content popup-registered__content">
-        <img src="<%=require('./images/close.svg')%>" alt="Закрыть форму" class="popup__close popup-add-card__close">
+        <img
+          src="<%=require('./images/close.svg')%>"
+          alt="Закрыть форму"
+          class="popup__close popup-add-card__close"
+        />
         <h3 class="popup__title">Пользователь успешно зарегистрирован!</h3>
-          <button type="button" class="popup__reg-button popup-registered__button">Войти</button>
+        <button
+          type="button"
+          class="popup__reg-button popup-registered__button"
+        >
+          Войти
+        </button>
       </div>
     </div>
 

@@ -10,6 +10,11 @@
   cursor: pointer;
   text-decoration: none;
   border: none;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.popup__reg-button:hover {
+  opacity: 0.8;
 }
 
 .popup__reg-button:active, .popup__reg-button:focus {

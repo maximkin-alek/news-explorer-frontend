@@ -7,6 +7,12 @@
   position: absolute;
   top: 64px;
   left: 441px;
+  color: #FFFFFF;
+  font-family: Roboto, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
   transition: background 0.3s ease;
 }
 

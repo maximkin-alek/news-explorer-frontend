@@ -7,4 +7,9 @@
   text-align: center;
   color: #1A1B22;
   text-decoration: none;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.footer__link:hover {
+  opacity: 0.8;
 }

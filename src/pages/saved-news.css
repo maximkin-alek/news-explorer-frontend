@@ -12,9 +12,24 @@
 @import url(../blocks/popup-signup/popup-signup.css);
 @import url(../blocks/popup-registered/popup-registered.css);
 @import url(../blocks/articles/articles.css);
-
 body {
   max-width: 1440px;
   margin: 0 auto;
   position: relative;
 }
+
+@media screen and (max-width: 800px) {
+  .body {
+    max-width: 768px;
+  }
+}
+
+@media screen and (max-width: 330px) {
+  .body {
+    max-width: 320px;
+  }
+}
+
+/* * {
+  border: 1px solid red;
+} */

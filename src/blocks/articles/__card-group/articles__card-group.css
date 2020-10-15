@@ -16,3 +16,11 @@
     padding-top: 32px;
   }
 }
+
+@media screen and (max-width: 540px) {
+  .articles__card-group {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding-top: 16px;
+  }
+}

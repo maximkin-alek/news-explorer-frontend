@@ -25,7 +25,7 @@
           <li class="header__list-item header__list-item_isVisible">
             <a
               class="link header__link header__link_white-theme header__link_isActive"
-              href="/"
+              href="./saved-news.html"
               >Сохранённые статьи</a
             >
           </li>
@@ -36,7 +36,7 @@
               Александр<img
                 class="header__logout-icon"
                 src="<%= require('./images/logout-black.svg') %>"
-                alt=""
+                alt="иконка выхода"
               />
             </button>
           </li>
@@ -50,7 +50,7 @@
       ></div>
       <ul class="header__mobile-menu">
         <li class="header__list-item header__list-item_isVisible">
-          <a class="link header__link" href="/">Главная</a>
+          <a class="link header__link" href="./index.html">Главная</a>
         </li>
         <li class="header__list-item header__list-item_isVisible">
           <a class="link header__link" href="./saved-news.html"
@@ -63,7 +63,7 @@
             Александр<img
               class="header__logout-icon"
               src="<%= require('./images/logout.svg') %>"
-              alt=""
+              alt="иконка выхода"
             />
           </button>
         </li>
@@ -87,7 +87,7 @@
         <a class="card" href="#">
           <img
             class="card__image"
-            alt=""
+            alt="Иллюстрация новостной статьи"
             src="<%= require('./images/image_04.png') %>"
           />
           <p class="card__theme">Природа</p>
@@ -105,7 +105,7 @@
         <a class="card" href="#">
           <img
             class="card__image"
-            alt=""
+            alt="Иллюстрация новостной статьи"
             src="<%= require('./images/image_04.png') %>"
           />
           <p class="card__theme">Природа</p>
@@ -123,7 +123,7 @@
         <a class="card" href="#">
           <img
             class="card__image"
-            alt=""
+            alt="Иллюстрация новостной статьи"
             src="<%= require('./images/image_04.png') %>"
           />
           <p class="card__theme">Природа</p>
@@ -141,7 +141,7 @@
         <a class="card" href="#">
           <img
             class="card__image"
-            alt=""
+            alt="Иллюстрация новостной статьи"
             src="<%= require('./images/image_04.png') %>"
           />
           <p class="card__theme">Природа</p>
@@ -159,7 +159,7 @@
         <a class="card" href="#">
           <img
             class="card__image"
-            alt=""
+            alt="Иллюстрация новостной статьи"
             src="<%= require('./images/image_04.png') %>"
           />
           <p class="card__theme">Природа</p>
@@ -196,48 +196,50 @@
           ><img
             class="footer__social-icon"
             src="<%= require('./images/github.svg') %>"
-            alt=""
+            alt="Github"
         /></a>
         <a class="footer__social" href=""
           ><img
             class="footer__social-icon"
             src="<%=
           require('./images/VK_BlackWhite_Logo_transparent.png') %>"
-            alt=""
+            alt="VK"
         /></a>
       </div>
     </section>
 
+    <!-- Для отображения попапа необходимо добавить модификатор popup_is-opened -->
     <div class="popup popup-signin">
       <div class="popup__content">
         <img
           src="<%=require('./images/close.svg')%>"
-          alt=""
+          alt="Закрыть форму"
           class="popup__close popup-add-card__close"
         />
         <h3 class="popup__title">Вход</h3>
         <form class="popup__form" name="signin" id="form-signin">
-          <label class="popup__label" for="email">Email</label>
+          <label class="popup__label" for="signin-email">Email</label>
           <input
             type="email"
             name="name"
-            id="email"
+            id="signin-email"
             class="popup__input"
             placeholder="Введите почту"
             required
           />
-          <span class="error-messege" id="error-email">1</span>
-
-          <label class="popup__label" for="password">Пароль</label>
+          <!--для отображения ошибки необходимо ввести текст в поле span  -->
+          <span class="error-messege" id="error-signin-email">1</span>
+          <label class="popup__label" for="signin-password">Пароль</label>
           <input
             name="password"
             type="password"
             class="popup__input"
             placeholder="Введите пароль"
-            id="password"
+            id="signin-password"
             required
           />
-          <span class="error-messege" id="error-password">2</span>
+          <!-- для отображения ошибки необходимо ввести текст в поле span -->
+          <span class="error-messege" id="error-signin-password">2</span>
 
           <button type="submit" class="button popup__button button_isVisible">
             Войти
@@ -251,53 +253,56 @@
         </form>
       </div>
     </div>
-
+    <!-- Для отображения попапа необходимо добавить модификатор popup_is-opened -->
     <div class="popup popup-signup">
       <div class="popup__content">
         <img
           src="<%=require('./images/close.svg')%>"
-          alt=""
+          alt="Закрыть форму"
           class="popup__close popup-add-card__close"
         />
         <h3 class="popup__title">Регистрация</h3>
         <form class="popup__form" name="signup" id="form-signup">
-          <label class="popup__label" for="email">Email</label>
+          <label class="popup__label" for="signup-email">Email</label>
           <input
             type="email"
             name="name"
-            id="email"
+            id="signup-email"
             class="popup__input"
             placeholder="Введите почту"
             required
           />
-          <span class="error-messege" id="error-email">1</span>
+          <!--для отображения ошибки необходимо ввести текст в поле span  -->
+          <span class="error-messege" id="error-signup-email">1</span>
 
-          <label class="popup__label" for="password">Пароль</label>
+          <label class="popup__label" for="signup-password">Пароль</label>
           <input
             name="password"
             type="password"
             class="popup__input"
             placeholder="Введите пароль"
-            id="password"
+            id="signup-password"
             required
             minlength="8"
           />
-          <span class="error-messege" id="error-password">2</span>
+          <!--для отображения ошибки необходимо ввести текст в поле span  -->
+          <span class="error-messege" id="error-signup-password">2</span>
 
-          <label class="popup__label" for="name">Имя</label>
+          <label class="popup__label" for="signup-name">Имя</label>
           <input
             name="name"
             type="text"
             class="popup__input"
             placeholder="Введите своё имя"
-            id="name"
+            id="signup-name"
             required
             minlength="2"
             maxlength="30"
           />
-          <span class="error-messege" id="error-name">3</span>
-
-          <span class="error-messege popup-signup__duble-error" id="error-name"
+          <!--для отображения ошибки необходимо ввести текст в поле span  -->
+          <span class="error-messege" id="error-signup-name">3</span>
+          <!--для отображения ошибки необходимо ввести текст в поле span  -->
+          <span class="error-messege popup-signup__duble-error" id="duble-error"
             >Такой пользователь уже есть</span
           >
           <button type="submit" class="button popup__button button_isVisible">
@@ -309,12 +314,12 @@
         </form>
       </div>
     </div>
-
+    <!-- Для отображения попапа необходимо добавить модификатор popup_is-opened -->
     <div class="popup popup-registered">
       <div class="popup__content popup-registered__content">
         <img
           src="<%=require('./images/close.svg')%>"
-          alt=""
+          alt="Закрыть форму"
           class="popup__close popup-add-card__close"
         />
         <h3 class="popup__title">Пользователь успешно зарегистрирован!</h3>
@@ -326,7 +331,6 @@
         </button>
       </div>
     </div>
-
     <script src="<%= htmlWebpackPlugin.files.js %>"></script>
   </body>
 </html>

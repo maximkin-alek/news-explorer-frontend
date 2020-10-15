@@ -4,13 +4,20 @@ const WebpackMd5Hash = require('webpack-md5-hash');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
+const PATHS = {
+  src: path.resolve(process.cwd(), "src"),
+  dist: path.resolve(process.cwd(), "dist")
+};
+
 module.exports = {
-  entry: [
-    './src/Scripts/index.js',
-    './src/Scripts/saved-news.js'],
+  entry: {
+    main: `${PATHS.src}/Scripts/index.js`,
+    savedNews: `${PATHS.src}/Scripts/saved-news.js`,
+  }
+  ,
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: '[name].[chunkhash].js',
+    path: PATHS.dist,
+    filename: 'scripts/[name].[chunkhash].js',
   },
   module: {
     rules: [
@@ -23,7 +30,11 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
+        use: [{
+          loader: MiniCssExtractPlugin.loader,
+          options: { publicPath: '../', }
+        }, 'css-loader', 'postcss-loader'
+      ],
       },
       {
         test: /\.(png|jpg|gif|ico|svg)$/,
@@ -31,6 +42,7 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
+              publicPath: '../',
               name: './images/[name].[ext]',
               esModule: false
             }
@@ -50,7 +62,7 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'style.[contenthash].css',
+      filename: './styles/style.[contenthash].css',
     }),
     new OptimizeCssAssetsPlugin({
       assetNameRegExp: /\.css$/g,
@@ -61,14 +73,14 @@ module.exports = {
       canPrint: true
     }),
     new HtmlWebpackPlugin({
-      inject: false,
       template: './src/index.html',
       filename: 'index.html',
+      chunks: ["main"]
     }),
     new HtmlWebpackPlugin({
-      inject: false,
       template: './src/saved-news.html',
       filename: 'saved-news.html',
+      chunks: ["savedNews"]
     }),
     new WebpackMd5Hash(),
   ],
