@@ -47,7 +47,7 @@
       <div class="header__mobile-button header__mobile-button_open"></div>
       <!-- Отображение мобильного меню с помощью модификатора  header__mobile-menu_isVisible
       При открытии мобильного меню хедеру будет задаваться черный фон средствами JS-->
-      <ul class="header__mobile-menu ">
+      <ul class="header__mobile-menu">
         <li class="header__list-item header__list-item_isVisible">
           <a class="link header__link" href="./index.html">Главная</a>
         </li>
@@ -169,11 +169,11 @@
           </p>
           <p class="card__source">Риа</p>
         </a>
-        <!-- Отображение кнопки регулируется модификатором button_isVisible -->
-        <button class="button button_isVisible results__button">
-          Показать еще
-        </button>
       </div>
+      <!-- Отображение кнопки регулируется модификатором button_isVisible -->
+      <button class="button button_isVisible results__button">
+        Показать еще
+      </button>
     </section>
 
     <section class="about">
@@ -219,22 +219,27 @@
             >
           </li>
         </ul>
-        <a
-          class="footer__social"
-          href="https://github.com/maximkin-alek"
-          target="_blank"
-          ><img
-            class="footer__social-icon"
-            src="<%= require('./images/github.svg') %>"
-            alt="github"
-        /></a>
-        <a class="footer__social" href="https://vk.com/id810787" target="_blank"
-          ><img
-            class="footer__social-icon"
-            src="<%=
+        <div class="footer__social-group">
+          <a
+            class="footer__social"
+            href="https://github.com/maximkin-alek"
+            target="_blank"
+            ><img
+              class="footer__social-icon"
+              src="<%= require('./images/github.svg') %>"
+              alt="github"
+          /></a>
+          <a
+            class="footer__social"
+            href="https://vk.com/id810787"
+            target="_blank"
+            ><img
+              class="footer__social-icon"
+              src="<%=
           require('./images/VK_BlackWhite_Logo_transparent.png') %>"
-            alt="VK"
-        /></a>
+              alt="VK"
+          /></a>
+        </div>
       </div>
     </section>
     <!-- Для отображения попапа необходимо добавить модификатор popup_is-opened -->

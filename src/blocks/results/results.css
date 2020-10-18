@@ -17,6 +17,18 @@
   }
 }
 
+@media screen and (max-width: 765px) {
+  .results {
+    padding: 0 60px;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .results {
+    padding: 0 32px;
+  }
+}
+
 @media screen and (max-width: 540px) {
   .results {
     min-height: auto;

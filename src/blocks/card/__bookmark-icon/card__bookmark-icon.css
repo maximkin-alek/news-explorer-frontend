@@ -20,7 +20,7 @@
   }
 }
 
-@media screen and (max-width: 5400px) {
+@media screen and (max-width: 550px) {
   .card__bookmark-icon {
     top: 16px;
     right: 16px;

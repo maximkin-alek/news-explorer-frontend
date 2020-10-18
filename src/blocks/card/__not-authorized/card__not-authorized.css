@@ -29,7 +29,7 @@
   }
 }
 
-@media screen and (max-width: 540px) {
+@media screen and (max-width: 550px) {
   .card__not-authorized {
     width: 165px;
     height: 40px;

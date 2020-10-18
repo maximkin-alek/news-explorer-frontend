@@ -22,7 +22,7 @@
     padding: 0 40px;
   }
 }
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 740px) {
   .footer {
     flex-direction: column-reverse;
     align-items: start;

@@ -12,7 +12,7 @@
   }
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 740px) {
   .footer__list-elem {
     margin-bottom: 38px;
   }

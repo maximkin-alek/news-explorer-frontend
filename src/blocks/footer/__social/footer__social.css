@@ -5,3 +5,9 @@
 .footer__social:last-of-type {
   margin-right: 0;
 }
+
+@media screen and (max-width: 340px) {
+  .footer__social {
+    margin-right: 15px;
+  }
+}
