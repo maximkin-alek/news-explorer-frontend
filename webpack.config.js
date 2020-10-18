@@ -11,8 +11,8 @@ const PATHS = {
 
 module.exports = {
   entry: {
-    main: `${PATHS.src}/Scripts/index.js`,
-    savedNews: `${PATHS.src}/Scripts/saved-news.js`,
+    main: `${PATHS.src}/index.js`,
+    savedNews: `${PATHS.src}/Scripts/saved-articles/saved-news.js`,
   }
   ,
   output: {

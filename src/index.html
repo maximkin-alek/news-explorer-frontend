@@ -28,9 +28,9 @@
               >Сохранённые статьи</a
             >
           </li>
-          <li class="header__list-item header__list-item_isVisible">
+          <li class="header__list-item ">
             <!-- Для отображения кнопок необходимо использовать модификатор button_isVisible -->
-            <button class="button button_isVisible header__button">
+            <button class="button header__button">
               Александр<img
                 class="header__logout-icon"
                 src="<%= require('./images/logout.svg') %>"
@@ -38,8 +38,8 @@
               />
             </button>
           </li>
-          <li class="header__list-item">
-            <button class="button header__button">Авторизоваться</button>
+          <li class="header__list-item header__list-item_isVisible">
+            <button class="button button-auth header__button button_isVisible ">Авторизоваться</button>
           </li>
         </ul>
       </nav>
@@ -67,7 +67,7 @@
           </button>
         </li>
         <li class="header__list-item">
-          <button class="button header__button">Авторизоваться</button>
+          <button class="button button-auth header__button">Авторизоваться</button>
         </li>
       </ul>
     </header>
@@ -248,7 +248,7 @@
         <img
           src="<%=require('./images/close.svg')%>"
           alt="Закрыть форму"
-          class="popup__close popup-add-card__close"
+          class="popup__close popup-signin__close"
         />
         <h3 class="popup__title">Вход</h3>
         <form class="popup__form" name="signin" id="form-signin">
@@ -280,7 +280,7 @@
           </button>
           <p class="popup__text">
             или
-            <button type="button" class="popup__reg-button">
+            <button type="button" class="popup__reg-button button-reg">
               Зарегистрироваться
             </button>
           </p>
@@ -293,7 +293,7 @@
         <img
           src="<%=require('./images/close.svg')%>"
           alt="Закрыть форму"
-          class="popup__close popup-add-card__close"
+          class="popup__close popup-signup__close"
         />
         <h3 class="popup__title">Регистрация</h3>
         <form class="popup__form" name="signup" id="form-signup">
@@ -343,7 +343,7 @@
             Зарегистрироваться
           </button>
           <p class="popup__text">
-            или <button type="button" class="popup__reg-button">Войти</button>
+            или <button type="button" class="popup__reg-button button-auth">Войти</button>
           </p>
         </form>
       </div>
@@ -359,7 +359,7 @@
         <h3 class="popup__title">Пользователь успешно зарегистрирован!</h3>
         <button
           type="button"
-          class="popup__reg-button popup-registered__button"
+          class="popup__reg-button button-reg popup-registered__button"
         >
           Войти
         </button>
