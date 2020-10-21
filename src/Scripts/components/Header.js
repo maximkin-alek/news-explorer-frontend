@@ -3,7 +3,7 @@ export class Header {
     this.color = color;
   }
 
-  _render() { }
+  render() { }
 
   _isLoggedIn() { }
 

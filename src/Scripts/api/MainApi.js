@@ -1,6 +1,8 @@
 export class MainApi {
-  constructor() {
+  constructor(url) {
+    this._url = url;
   }
+
 
   _handlePromise(res) {
     if (res.ok) {
@@ -11,7 +13,20 @@ export class MainApi {
 
   signup() { }
 
-  signin() { }
+  signin(userEmail, userPassword) {
+    return fetch(`${this._url}/signin`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      credentials: 'include',
+      body: JSON.stringify({
+        email: userEmail,
+        password: userPassword,
+      })
+    })
+      .then((res) => this._handlePromise(res))
+  }
 
   getUserData() { }
 
