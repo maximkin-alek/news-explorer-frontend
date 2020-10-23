@@ -30,11 +30,10 @@ export class Popup {
 
 
   addListeners() {
-    if (this._listenerOpen.length > 1) {
-      this._listenerOpen.forEach(element => {
-        element.addEventListener('click', this.open);
-      });
-    } else { this._listenerOpen.addEventListener('click', this.open); }
+
+    this._listenerOpen.forEach(element => {
+      element.addEventListener('click', this.open);
+    });
 
     this._listenerClose.addEventListener('click', this.close);
   }

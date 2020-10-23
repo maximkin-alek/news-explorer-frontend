@@ -23,14 +23,14 @@
               >Главная</a
             >
           </li>
-          <li class="header__list-item header__list-item_isVisible">
+          <li class="header__list-item saved-articles">
             <a class="link header__link" href="./saved-news.html"
               >Сохранённые статьи</a
             >
           </li>
-          <li class="header__list-item ">
+          <li class="header__list-item user-item header__list-item_isVisible">
             <!-- Для отображения кнопок необходимо использовать модификатор button_isVisible -->
-            <button class="button header__button">
+            <button class="button header__button button_isVisible">
               Александр<img
                 class="header__logout-icon"
                 src="<%= require('./images/logout.svg') %>"
@@ -38,25 +38,27 @@
               />
             </button>
           </li>
-          <li class="header__list-item header__list-item_isVisible">
-            <button class="button button-auth header__button button_isVisible ">Авторизоваться</button>
+          <li class="header__list-item auth-item">
+            <button class="button button-auth header__button button_isVisible">
+              Авторизоваться
+            </button>
           </li>
         </ul>
       </nav>
       <!-- Состояние кнопки мобильного меню регулируется модификаторам  header__mobile-button_open-->
-      <div class="header__mobile-button header__mobile-button_open"></div>
+      <div class="header__mobile-button"></div>
       <!-- Отображение мобильного меню с помощью модификатора  header__mobile-menu_isVisible
       При открытии мобильного меню хедеру будет задаваться черный фон средствами JS-->
       <ul class="header__mobile-menu">
         <li class="header__list-item header__list-item_isVisible">
           <a class="link header__link" href="./index.html">Главная</a>
         </li>
-        <li class="header__list-item header__list-item_isVisible">
+        <li class="header__list-item saved-articles">
           <a class="link header__link" href="./saved-news.html"
             >Сохранённые статьи</a
           >
         </li>
-        <li class="header__list-item header__list-item_isVisible">
+        <li class="header__list-item user-item header__list-item_isVisible">
           <!-- Для отображения кнопок необходимо использовать модификатор button_isVisible -->
           <button class="button button_isVisible header__button">
             Александр<img
@@ -66,8 +68,10 @@
             />
           </button>
         </li>
-        <li class="header__list-item">
-          <button class="button button-auth header__button">Авторизоваться</button>
+        <li class="header__list-item auth-item">
+          <button class="button button-auth header__button">
+            Авторизоваться
+          </button>
         </li>
       </ul>
     </header>
@@ -262,7 +266,7 @@
             required
           />
           <!--для отображения ошибки необходимо ввести текст в поле span  -->
-          <span class="error-messege" id="error-signin-email">1</span>
+          <span class="error-messege" id="error-signin-email"></span>
           <label class="popup__label" for="signin-password">Пароль</label>
           <input
             name="password"
@@ -273,7 +277,7 @@
             required
           />
           <!-- для отображения ошибки необходимо ввести текст в поле span -->
-          <span class="error-messege" id="error-signin-password">2</span>
+          <span class="error-messege" id="error-signin-password"></span>
 
           <button type="submit" class="button popup__button button_isVisible">
             Войти
@@ -307,7 +311,7 @@
             required
           />
           <!--для отображения ошибки необходимо ввести текст в поле span  -->
-          <span class="error-messege" id="error-signup-email">1</span>
+          <span class="error-messege" id="error-signup-email"></span>
 
           <label class="popup__label" for="signup-password">Пароль</label>
           <input
@@ -320,7 +324,7 @@
             minlength="8"
           />
           <!--для отображения ошибки необходимо ввести текст в поле span  -->
-          <span class="error-messege" id="error-signup-password">2</span>
+          <span class="error-messege" id="error-signup-password"></span>
 
           <label class="popup__label" for="signup-name">Имя</label>
           <input
@@ -334,16 +338,20 @@
             maxlength="30"
           />
           <!--для отображения ошибки необходимо ввести текст в поле span  -->
-          <span class="error-messege" id="error-signup-name">3</span>
+          <span class="error-messege" id="error-signup-name"></span>
           <!--для отображения ошибки необходимо ввести текст в поле span  -->
-          <span class="error-messege popup-signup__duble-error" id="duble-error"
-            >Такой пользователь уже есть</span
-          >
+          <span
+            class="error-messege popup-signup__duble-error"
+            id="duble-error"
+          ></span>
           <button type="submit" class="button popup__button button_isVisible">
             Зарегистрироваться
           </button>
           <p class="popup__text">
-            или <button type="button" class="popup__reg-button button-auth">Войти</button>
+            или
+            <button type="button" class="popup__reg-button button-auth">
+              Войти
+            </button>
           </p>
         </form>
       </div>
@@ -354,12 +362,12 @@
         <img
           src="<%=require('./images/close.svg')%>"
           alt="Закрыть форму"
-          class="popup__close popup-add-card__close"
+          class="popup__close popup-registered__close"
         />
         <h3 class="popup__title">Пользователь успешно зарегистрирован!</h3>
         <button
           type="button"
-          class="popup__reg-button button-reg popup-registered__button"
+          class="popup__reg-button button-auth popup-registered__button"
         >
           Войти
         </button>
@@ -368,4 +376,36 @@
 
     <script src="<%= htmlWebpackPlugin.files.js %>"></script>
   </body>
+
+  <template id="header-no-auth">
+    <ul class="header__links">
+      <li class="header__list-item header__list-item_isVisible">
+        <a class="link header__link header__link_isActive" href="./index.html"
+          >Главная</a
+        >
+      </li>
+      <li class="header__list-item header__list-item_isVisible">
+        <button class="button button-auth header__button button_isVisible">
+          Авторизоваться
+        </button>
+      </li>
+    </ul>
+  </template>
+
+  <template id="header-auth">
+    <ul class="header__links">
+      <li class="header__list-item header__list-item_isVisible">
+        <a class="link header__link header__link_isActive" href="./index.html"
+          >Главная</a
+        >
+      </li>
+      <li class="header__list-item">
+        <a class="link header__link" href="./saved-news.html"
+          >Сохранённые статьи</a
+        >
+      </li>
+
+
+    </ul>
+  </template>
 </html>
