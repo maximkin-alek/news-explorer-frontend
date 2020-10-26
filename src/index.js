@@ -3,6 +3,8 @@ import { MainApi } from './Scripts/api/MainApi'
 import { Form } from './Scripts/components/Form'
 import { Header } from './Scripts/components/Header'
 
+import {showMobileMenu, mobileMenuButton} from './Scripts/utils/utils'
+
 import './pages/index.css';
 
 const signinPopup = document.querySelector('.popup-signin');
@@ -35,7 +37,7 @@ popupReg.addListeners();
 
 const mainApi = new MainApi(API_URL);
 
-const header = new Header(mainApi, articleItems, authItems, userItems);
+const header = new Header(mainApi, articleItems, authItems, userItems, showMobileMenu, mobileMenuButton);
 header.render();
 const headerRender = header.render;
 

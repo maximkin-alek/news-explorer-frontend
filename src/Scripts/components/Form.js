@@ -37,11 +37,10 @@ export class Form {
 
 
     this._api.signup(name.value, email.value, password.value)
-    .then((data) => {
+    .then(() => {
       this._form.reset();
       this._popup.close();
       this._regPopup.open();
-      console.log(data);
     })
     .catch((err) => {
       console.log(err);
