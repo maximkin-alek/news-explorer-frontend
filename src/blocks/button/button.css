@@ -12,6 +12,13 @@
   display: none;
 }
 
+.button:disabled {
+  background: #E6E8EB;
+}
+.button:disabled:hover {
+  background: #E6E8EB;
+}
+
 .button:active, .button:focus {
   outline: none;
 }

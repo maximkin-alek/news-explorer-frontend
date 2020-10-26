@@ -276,10 +276,17 @@
             id="signin-password"
             required
           />
-          <!-- для отображения ошибки необходимо ввести текст в поле span -->
           <span class="error-messege" id="error-signin-password"></span>
 
-          <button type="submit" class="button popup__button button_isVisible">
+          <span
+            class="error-messege popup-signup__duble-error"
+            id="signin-api-error"
+          ></span>
+          <button
+            type="submit"
+            class="button popup__button button_isVisible"
+            disabled
+          >
             Войти
           </button>
           <p class="popup__text">
@@ -291,7 +298,7 @@
         </form>
       </div>
     </div>
-    <!-- Для отображения попапа необходимо добавить модификатор popup_is-opened -->
+
     <div class="popup popup-signup">
       <div class="popup__content">
         <img
@@ -321,7 +328,6 @@
             placeholder="Введите пароль"
             id="signup-password"
             required
-            minlength="8"
           />
           <!--для отображения ошибки необходимо ввести текст в поле span  -->
           <span class="error-messege" id="error-signup-password"></span>
@@ -337,14 +343,16 @@
             minlength="2"
             maxlength="30"
           />
-          <!--для отображения ошибки необходимо ввести текст в поле span  -->
           <span class="error-messege" id="error-signup-name"></span>
-          <!--для отображения ошибки необходимо ввести текст в поле span  -->
           <span
             class="error-messege popup-signup__duble-error"
-            id="duble-error"
+            id="signup-api-error"
           ></span>
-          <button type="submit" class="button popup__button button_isVisible">
+          <button
+            type="submit"
+            class="button popup__button button_isVisible"
+            disabled
+          >
             Зарегистрироваться
           </button>
           <p class="popup__text">
@@ -373,8 +381,6 @@
         </button>
       </div>
     </div>
-
-    <script src="<%= htmlWebpackPlugin.files.js %>"></script>
   </body>
 
   <template id="header-no-auth">
@@ -404,8 +410,6 @@
           >Сохранённые статьи</a
         >
       </li>
-
-
     </ul>
   </template>
 </html>

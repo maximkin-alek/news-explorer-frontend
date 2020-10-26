@@ -1,15 +1,17 @@
 export class Form {
-  constructor(form, popup, api, regPopup, headerRender) {
+  constructor(form, popup, api, regPopup, headerRender, apiError) {
     this._form = form;
     this._popup = popup;
     this._api = api;
     this._regPopup = regPopup;
     this.headerRender = headerRender;
+    this._apiError = apiError;
 
     this.signin = this.signin.bind(this);
     this.signup = this.signup.bind(this);
     this.setListeners = this.setListeners.bind(this);
   }
+
 
   signin(event) {
     event.preventDefault();
@@ -24,7 +26,12 @@ export class Form {
         this.headerRender();
       })
       .catch((err) => {
-        console.log(err)
+        if (err.statusCode === 400) {
+          this._apiError.textContent = '';
+          this._apiError.textContent = err.validation.body.message;
+        } else {
+          this._apiError.textContent = err.message; }
+
       });
   }
 
@@ -37,14 +44,18 @@ export class Form {
 
 
     this._api.signup(name.value, email.value, password.value)
-    .then(() => {
-      this._form.reset();
-      this._popup.close();
-      this._regPopup.open();
-    })
-    .catch((err) => {
-      console.log(err);
-    })
+      .then(() => {
+        this._form.reset();
+        this._popup.close();
+        this._regPopup.open();
+      })
+      .catch((err) => {
+        if (err.statusCode === 400) {
+          this._apiError.textContent = '';
+          this._apiError.textContent = err.validation.body.message;
+        } else {
+          this._apiError.textContent = err.message; }
+      })
   }
 
   setListeners(form, action) {

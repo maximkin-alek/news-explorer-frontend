@@ -2,8 +2,11 @@ import { Popup } from './Scripts/components/Popup'
 import { MainApi } from './Scripts/api/MainApi'
 import { Form } from './Scripts/components/Form'
 import { Header } from './Scripts/components/Header'
+import { FormValidator } from './Scripts/utils/FormValidator'
 
-import {showMobileMenu, mobileMenuButton} from './Scripts/utils/utils'
+import { showMobileMenu, mobileMenuButton } from './Scripts/utils/utils'
+import { errorMessages } from './Scripts/constants/constants'
+
 
 import './pages/index.css';
 
@@ -21,6 +24,8 @@ const formSignup = document.querySelector('#form-signup');
 const articleItems = document.querySelectorAll('.saved-articles');
 const userItems = document.querySelectorAll('.user-item');
 const authItems = document.querySelectorAll('.auth-item');
+const singinApiErr = document.querySelector('#signin-api-error');
+const singupApiErr = document.querySelector('#signup-api-error');
 
 const API_URL = 'http://localhost:3000';
 
@@ -41,9 +46,12 @@ const header = new Header(mainApi, articleItems, authItems, userItems, showMobil
 header.render();
 const headerRender = header.render;
 
-const signinForm = new Form(formSignin, popupSignin, mainApi, undefined, headerRender);
+const signinForm = new Form(formSignin, popupSignin, mainApi, undefined, headerRender, singinApiErr);
 signinForm.setListeners(formSignin, signinForm.signin);
 
-const signupForm = new Form(formSignup, popupSignup, mainApi, popupReg);
+const signupForm = new Form(formSignup, popupSignup, mainApi, undefined, popupReg, singupApiErr);
 signupForm.setListeners(formSignup, signupForm.signup);
+
+new FormValidator(formSignin, errorMessages, authPopupCloseButton)
+new FormValidator(formSignup, errorMessages, regPopupCloseButton)
 
