@@ -6,8 +6,9 @@ import { FormValidator } from './Scripts/utils/FormValidator'
 import { NewsApi } from './Scripts/api/NewsApi'
 import { NewsCard } from './Scripts/components/NewsCard'
 import { NewsForm } from './Scripts/components/newsForm'
+import { NewsCardList } from './Scripts/components/NewsCardList'
 
-import { showMobileMenu, mobileMenuButton } from './Scripts/utils/utils'
+import { showMobileMenu, mobileMenuButton, splitResults } from './Scripts/utils/utils'
 import { errorMessages, API_KEY, API_URL, BASE_URL_NEWS, cardMurkup } from './Scripts/constants/constants'
 
 
@@ -31,6 +32,8 @@ const authItems = document.querySelectorAll('.auth-item');
 const singinApiErr = document.querySelector('#signin-api-error');
 const singupApiErr = document.querySelector('#signup-api-error');
 const resultsGroup = document.querySelector('.results__group');
+const resultsSection = document.querySelector('.results');
+const noResults = document.querySelector('.no-result');
 
 const popupSignin = new Popup(signinPopup, authButton);
 popupSignin.addListenersOpen();
@@ -49,18 +52,26 @@ const header = new Header(mainApi, articleItems, authItems, userItems, showMobil
 header.render();
 const headerRender = header.render;
 
-const signinForm = new Form(formSignin, popupSignin, mainApi, headerRender, singinApiErr);
+const newsCard = new NewsCard(cardMurkup, mainApi);
+const renderLikeIcon = newsCard.renderIcon;
+
+const signinForm = new Form(formSignin, popupSignin, mainApi, headerRender, singinApiErr, renderLikeIcon);
 signinForm.setListeners(formSignin, signinForm.signin);
 
-const signupForm = new Form(formSignup, popupSignup, mainApi, undefined, singupApiErr, popupReg);
+const signupForm = new Form(formSignup, popupSignup, mainApi, undefined, singupApiErr, popupReg, );
 signupForm.setListeners(formSignup, signupForm.signup);
-const newsCard = new NewsCard(cardMurkup, mainApi);
-const createNewsApi = (...arg) => new NewsApi(...arg);
+
 const newsApi = new NewsApi(API_KEY, '2020-10-20', '2020-10-27', BASE_URL_NEWS);
-newsApi.getNews('Коронавирус')
+
+const newsCardList = new NewsCardList(splitResults, resultsGroup);
+const renderResultsSearch = newsCardList.renderResults;
 
 
-const newsForm = new NewsForm(formNews, newsApi)
+const newsForm = new NewsForm(formNews, newsApi, newsCard, noResults, resultsSection, renderResultsSearch);
+newsForm.addListener();
+
+
+
 new FormValidator(formSignin, errorMessages, authPopupCloseButton)
 new FormValidator(formSignup, errorMessages, regPopupCloseButton)
 

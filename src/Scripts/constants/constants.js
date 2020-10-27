@@ -5,7 +5,7 @@ const errorMessages = {
 };
 const API_KEY = 'e5cac72062c44e969096f918472a98c5';
 const API_URL = 'http://localhost:3000';
-const BASE_URL_NEWS = 'http://newsapi.org/v2/top-headlines';
+const BASE_URL_NEWS = 'http://newsapi.org/v2/everything';
 const cardMurkup = `<a class="card" href="" target="_blank">
 <img
   class="card__image"

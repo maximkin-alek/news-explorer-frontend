@@ -19,15 +19,19 @@ export class NewsCard {
     return murkup;
   }
 
-  renderIcon(elem) {
+  renderIcon(arr) {
     this._api.getUserData()
       .then(() => {
-        elem.classList.remove('card__bookmark-icon_not-authorized');
-        elem.classList.add('card__bookmark-icon_authorized');
+        arr.forEach(elem => {
+          elem.classList.remove('card__bookmark-icon_not-authorized');
+          elem.classList.add('card__bookmark-icon_authorized');
+        });
       })
       .catch(() => {
-        elem.classList.remove('card__bookmark-icon_authorized');
-        elem.classList.add('card__bookmark-icon_not-authorized');
+        arr.forEach(elem => {
+          elem.classList.remove('card__bookmark-icon_authorized');
+          elem.classList.add('card__bookmark-icon_not-authorized');
+        });
       })
   }
 }
