@@ -3,9 +3,12 @@ import { MainApi } from './Scripts/api/MainApi'
 import { Form } from './Scripts/components/Form'
 import { Header } from './Scripts/components/Header'
 import { FormValidator } from './Scripts/utils/FormValidator'
+import { NewsApi } from './Scripts/api/NewsApi'
+import { NewsCard } from './Scripts/components/NewsCard'
+import { NewsForm } from './Scripts/components/newsForm'
 
 import { showMobileMenu, mobileMenuButton } from './Scripts/utils/utils'
-import { errorMessages } from './Scripts/constants/constants'
+import { errorMessages, API_KEY, API_URL, BASE_URL_NEWS, cardMurkup } from './Scripts/constants/constants'
 
 
 import './pages/index.css';
@@ -21,24 +24,24 @@ const regPopupCloseButton = document.querySelector('.popup-signup__close');
 const registeredPopupCloseButton = document.querySelector('.popup-registered__close');
 const formSignin = document.querySelector('#form-signin');
 const formSignup = document.querySelector('#form-signup');
+const formNews = document.querySelector('#form-news');
 const articleItems = document.querySelectorAll('.saved-articles');
 const userItems = document.querySelectorAll('.user-item');
 const authItems = document.querySelectorAll('.auth-item');
 const singinApiErr = document.querySelector('#signin-api-error');
 const singupApiErr = document.querySelector('#signup-api-error');
+const resultsGroup = document.querySelector('.results__group');
 
-const API_URL = 'http://localhost:3000';
+const popupSignin = new Popup(signinPopup, authButton);
+popupSignin.addListenersOpen();
+popupSignin.addlistenerClose(authPopupCloseButton);
 
+const popupSignup = new Popup(signupPopup, regButton);
+popupSignup.addListenersOpen();
+popupSignup.addlistenerClose(regPopupCloseButton);
 
-
-const popupSignin = new Popup(signinPopup, authPopupCloseButton, authButton);
-popupSignin.addListeners();
-
-const popupSignup = new Popup(signupPopup, regPopupCloseButton, regButton);
-popupSignup.addListeners();
-
-const popupReg = new Popup(regPopup, registeredPopupCloseButton, registeredButton)
-popupReg.addListeners();
+const popupReg = new Popup(regPopup, registeredButton)
+popupReg.addlistenerClose(registeredPopupCloseButton);
 
 const mainApi = new MainApi(API_URL);
 
@@ -46,12 +49,18 @@ const header = new Header(mainApi, articleItems, authItems, userItems, showMobil
 header.render();
 const headerRender = header.render;
 
-const signinForm = new Form(formSignin, popupSignin, mainApi, undefined, headerRender, singinApiErr);
+const signinForm = new Form(formSignin, popupSignin, mainApi, headerRender, singinApiErr);
 signinForm.setListeners(formSignin, signinForm.signin);
 
-const signupForm = new Form(formSignup, popupSignup, mainApi, undefined, popupReg, singupApiErr);
+const signupForm = new Form(formSignup, popupSignup, mainApi, undefined, singupApiErr, popupReg);
 signupForm.setListeners(formSignup, signupForm.signup);
+const newsCard = new NewsCard(cardMurkup, mainApi);
+const createNewsApi = (...arg) => new NewsApi(...arg);
+const newsApi = new NewsApi(API_KEY, '2020-10-20', '2020-10-27', BASE_URL_NEWS);
+newsApi.getNews('Коронавирус')
 
+
+const newsForm = new NewsForm(formNews, newsApi)
 new FormValidator(formSignin, errorMessages, authPopupCloseButton)
 new FormValidator(formSignup, errorMessages, regPopupCloseButton)
 

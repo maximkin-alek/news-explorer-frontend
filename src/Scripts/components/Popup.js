@@ -1,14 +1,13 @@
 export class Popup {
-  constructor(popup, listenerClose, listenerOpen,) {
+  constructor(popup, listenerOpen) {
     this.popup = popup;
     this._listenerOpen = listenerOpen;
-    this._listenerClose = listenerClose;
-
 
     this.open = this.open.bind(this);
     this.close = this.close.bind(this);
-    this.addListeners = this.addListeners.bind(this);
+    this.addListenersOpen = this.addListenersOpen.bind(this);
     this._closeAll = this._closeAll.bind(this);
+    this.addlistenerClose = this.addlistenerClose.bind(this);
 
   }
 
@@ -27,14 +26,14 @@ export class Popup {
     this.popup.classList.remove('popup_is-opened');
   }
 
-
-
-  addListeners() {
+  addListenersOpen() {
 
     this._listenerOpen.forEach(element => {
       element.addEventListener('click', this.open);
     });
+  }
 
-    this._listenerClose.addEventListener('click', this.close);
+  addlistenerClose(button) {
+    button.addEventListener('click', this.close);
   }
 }

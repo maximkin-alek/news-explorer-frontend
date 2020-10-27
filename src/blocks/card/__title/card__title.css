@@ -18,8 +18,7 @@
 @media screen and (max-width: 800px) {
   .card__title {
     line-height: 28px;
-    max-height: 56px;
-    overflow: hidden;
+    max-height: fit-content;
     margin: 10px 16px;
   }
 }

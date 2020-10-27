@@ -1,5 +1,5 @@
 export class Form {
-  constructor(form, popup, api, regPopup, headerRender, apiError) {
+  constructor(form, popup, api, headerRender, apiError, regPopup) {
     this._form = form;
     this._popup = popup;
     this._api = api;
@@ -30,7 +30,8 @@ export class Form {
           this._apiError.textContent = '';
           this._apiError.textContent = err.validation.body.message;
         } else {
-          this._apiError.textContent = err.message; }
+          this._apiError.textContent = err.message;
+        }
 
       });
   }
@@ -54,7 +55,8 @@ export class Form {
           this._apiError.textContent = '';
           this._apiError.textContent = err.validation.body.message;
         } else {
-          this._apiError.textContent = err.message; }
+          this._apiError.textContent = err.message;
+        }
       })
   }
 

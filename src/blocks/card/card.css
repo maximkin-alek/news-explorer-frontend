@@ -9,7 +9,7 @@
 @import url(__delete-icon/card__delete-icon.css);
 .card {
   width: 400px;
-  height: 576px;
+  min-height: 576px;
   position: relative;
   text-decoration: none;
 }
@@ -17,14 +17,14 @@
 @media screen and (max-width: 800px) {
   .card {
     width: 224px;
-    height: 420px;
+    min-height: 420px;
   }
 }
 
 @media screen and (max-width: 550px) {
   .card {
     width: 288px;
-    height: 440px;
+    min-height: 440px;
     margin: 0 auto;
   }
 }

@@ -13,9 +13,9 @@ export class Header {
   }
 
   render() {
-
+// настроить отрисовку имени на кнопке
     this._api.getUserData()
-      .then(() => {
+      .then((data) => {
         this._setListeners();
         this._articleItems.forEach(element => {
           element.classList.add('header__list-item_isVisible');

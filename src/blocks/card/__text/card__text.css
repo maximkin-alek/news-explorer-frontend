@@ -6,14 +6,14 @@
   line-height: 22px;
   color: #1A1B22;
   margin: 16px 24px 18px;
-  max-height: 110px;
+  height:  110px;
   overflow: hidden;
-  text-overflow: ellipsis
 }
 
 @media screen and (max-width: 800px) {
   .card__text {
     margin: 10px 16px 0;
-    max-height: 88px;
+    height: 88px;
+    overflow: hidden;
   }
 }

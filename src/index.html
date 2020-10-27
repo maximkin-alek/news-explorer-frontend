@@ -82,7 +82,7 @@
         Находите самые свежие статьи на любую тему и сохраняйте в своём личном
         кабинете.
       </h2>
-      <form action="#" class="search-form">
+      <form class="search-form" id="form-news">
         <input
           class="search-form__input"
           type="text"
@@ -114,65 +114,7 @@
       <h2 class="subtitle">Результаты поиска</h2>
 
       <div class="results__group">
-        <a class="card" href="#">
-          <img
-            class="card__image"
-            alt="Иллюстрация новостной статьи"
-            src="<%= require('./images/image_08.png') %>"
-          />
-          <!-- требование авторизации откображается модификатором card__not-authorized_isVisible -->
-          <p class="card__not-authorized card__not-authorized_isVisible">
-            Войдите, чтобы сохранять статьи
-          </p>
-          <div class="card__bookmark-icon"></div>
-          <p class="card__date">2 августа, 2019</p>
-          <p class="card__title">Национальное достояние – парки</p>
-          <p class="card__text">
-            В 2016 году Америка отмечала важный юбилей: сто лет назад здесь
-            начала складываться система национальных парков – охраняемых
-            территорий, где и сегодня каждый может приобщиться к природе.
-          </p>
-          <p class="card__source">Лента.ру</p>
-        </a>
 
-        <a class="card" href="#">
-          <img
-            class="card__image"
-            alt="Иллюстрация новостной статьи"
-            src="<%= require('./images/image_04.png') %>"
-          />
-          <p class="card__not-authorized">Войдите, чтобы сохранять статьи</p>
-          <!-- состояние иконки "лайк" отображается модификатором  card__bookmark-icon_liked-->
-          <div class="card__bookmark-icon card__bookmark-icon_liked"></div>
-          <p class="card__date">2 августа, 2019</p>
-          <p class="card__title">Лесные огоньки: история одной фотографии</p>
-          <p class="card__text">
-            Фотограф отвлеклась от освещения суровой политической реальности
-            Мексики, чтобы запечатлеть ускользающую красоту одного из местных
-            чудес природы.
-          </p>
-          <p class="card__source">Медуза</p>
-        </a>
-
-        <a class="card" href="#">
-          <img
-            class="card__image"
-            alt="Иллюстрация новостной статьи"
-            src="<%= require('./images/image_07.png') %>"
-          />
-          <p class="card__not-authorized">Войдите, чтобы сохранять статьи</p>
-          <div class="card__bookmark-icon"></div>
-          <p class="card__date">2 августа, 2019</p>
-          <p class="card__title">
-            «Первозданная тайга»: новый фотопроект Игоря Шпиленка
-          </p>
-          <p class="card__text">
-            Знаменитый фотограф снимает первозданные леса России, чтобы
-            рассказать о необходимости их сохранения. В этот раз он отправился в
-            Двинско-Пинежскую тайгу, где...
-          </p>
-          <p class="card__source">Риа</p>
-        </a>
       </div>
       <!-- Отображение кнопки регулируется модификатором button_isVisible -->
       <button class="button button_isVisible results__button">
