@@ -8,7 +8,7 @@ import { NewsCard } from './Scripts/components/NewsCard'
 import { NewsForm } from './Scripts/components/newsForm'
 import { NewsCardList } from './Scripts/components/NewsCardList'
 
-import { showMobileMenu, mobileMenuButton, splitResults } from './Scripts/utils/utils'
+import { showMobileMenu, mobileMenuButton, splitResults, formatArticleDate} from './Scripts/utils/utils'
 import { errorMessages, API_KEY, API_URL, BASE_URL_NEWS, cardMurkup } from './Scripts/constants/constants'
 
 
@@ -17,8 +17,9 @@ import './pages/index.css';
 const signinPopup = document.querySelector('.popup-signin');
 const signupPopup = document.querySelector('.popup-signup');
 const regPopup = document.querySelector('.popup-registered');
-const authButton = document.querySelectorAll('.button-auth');
+const authButtons = document.querySelectorAll('.button-auth');
 const regButton = document.querySelectorAll('.button-reg');
+const buttonMore = document.querySelector('.results__button');
 const registeredButton = document.querySelectorAll('.popup-registered__button');
 const authPopupCloseButton = document.querySelector('.popup-signin__close');
 const regPopupCloseButton = document.querySelector('.popup-signup__close');
@@ -34,9 +35,9 @@ const singupApiErr = document.querySelector('#signup-api-error');
 const resultsGroup = document.querySelector('.results__group');
 const resultsSection = document.querySelector('.results');
 const noResults = document.querySelector('.no-result');
-const searchError = document.querySelector('#error-form-news');
+const searchError = document.querySelector('#error-news-input');
 
-const popupSignin = new Popup(signinPopup, authButton);
+const popupSignin = new Popup(signinPopup, authButtons);
 popupSignin.addListenersOpen();
 popupSignin.addlistenerClose(authPopupCloseButton);
 
@@ -53,7 +54,7 @@ const header = new Header(mainApi, articleItems, authItems, userItems, showMobil
 header.render();
 const headerRender = header.render;
 
-const newsCard = new NewsCard(cardMurkup, mainApi);
+const newsCard = new NewsCard(cardMurkup, mainApi, formatArticleDate);
 const renderLikeIcon = newsCard.renderIcon;
 
 const signinForm = new Form(formSignin, popupSignin, mainApi, headerRender, singinApiErr);
@@ -64,15 +65,18 @@ signupForm.setListeners(formSignup, signupForm.signup);
 
 const newsApi = new NewsApi(API_KEY, '2020-10-20', '2020-10-27', BASE_URL_NEWS);
 
-const newsCardList = new NewsCardList(splitResults, resultsGroup, renderLikeIcon, searchError);
+const newsCardList = new NewsCardList(splitResults, resultsGroup, renderLikeIcon, searchError, buttonMore);
 const renderResultsSearch = newsCardList.renderResults;
 const renderNewsError = newsCardList.renderError;
 const renderLoader = newsCardList.renderLoader;
 
+new FormValidator(formSignin, errorMessages, authPopupCloseButton)
+const signupFormValidator = new FormValidator(formSignup, errorMessages, regPopupCloseButton)
+const NewsFormValidator = signupFormValidator.addNewsFormValidator;
 
-const newsForm = new NewsForm(formNews, newsApi, newsCard, noResults, resultsSection, renderResultsSearch, renderNewsError, renderLoader);
+const newsForm = new NewsForm(formNews, newsApi, newsCard, noResults, resultsSection, renderResultsSearch, renderNewsError, renderLoader, NewsFormValidator);
 newsForm.addListener();
 
-new FormValidator(formSignin, errorMessages, authPopupCloseButton)
-new FormValidator(formSignup, errorMessages, regPopupCloseButton)
+
+
 

@@ -11,6 +11,21 @@ function splitResults(source, results) {
   for (let i = 0; i <= 2; i++) {
     results.push(source[i]);
   }
+  source.splice(0, 3);
 }
 
-export { showMobileMenu, mobileMenuButton, splitResults };
+function formatArticleDate(articleDate) {
+  const date = new Date(articleDate);
+
+  const formatter = new Intl.DateTimeFormat("ru", {
+    year: "numeric",
+    month: "long",
+    day: "numeric"
+  });
+  let dateStr = (formatter.format(date));
+  dateStr = dateStr.split(' ', 3);
+  dateStr[1]+=',';
+  return dateStr.join(' ');
+}
+
+export { showMobileMenu, mobileMenuButton, splitResults, formatArticleDate };

@@ -1,7 +1,8 @@
 export class NewsCard {
-  constructor(cardMurkup, api) {
+  constructor(cardMurkup, api, formatArticleDate) {
     this._cardMurkup = cardMurkup;
     this._api = api;
+    this._formatArticleDate = formatArticleDate;
 
     this.create = this.create.bind(this);
     this.renderIcon = this.renderIcon.bind(this);
@@ -12,7 +13,7 @@ export class NewsCard {
     const murkup = elem.firstElementChild;
     murkup.href = obj.url;
     murkup.querySelector('.card__image').src = obj.urlToImage;
-    murkup.querySelector('.card__date').textContent = obj.publishedAt;
+    murkup.querySelector('.card__date').textContent = this._formatArticleDate(obj.publishedAt);
     murkup.querySelector('.card__title').textContent = obj.title;
     murkup.querySelector('.card__text').textContent = obj.description;
     murkup.querySelector('.card__source').textContent = obj.source.name;

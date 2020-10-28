@@ -85,13 +85,15 @@
       <form class="search-form" id="form-news">
         <input
           class="search-form__input"
+          id="news-input"
           type="text"
-          minlength="2"
-          required
           placeholder="Политика"
         />
-        <span class="error-messege search-form__error-messege" id="error-form-news"></span>
-        <button class="search-form__button">Искать</button>
+        <span
+          class="error-messege search-form__error-messege"
+          id="error-news-input"
+        ></span>
+        <button type="submit" class="search-form__button">Искать</button>
       </form>
     </section>
     <!-- Отображение прелоудера с помощью модификатора  preloader_open-->
@@ -115,9 +117,7 @@
     <section class="results">
       <h2 class="subtitle">Результаты поиска</h2>
 
-      <div class="results__group">
-
-      </div>
+      <div class="results__group"></div>
       <!-- Отображение кнопки регулируется модификатором button_isVisible -->
       <button class="button button_isVisible results__button">
         Показать еще

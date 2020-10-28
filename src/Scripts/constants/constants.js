@@ -1,7 +1,9 @@
 const errorMessages = {
   empty: 'Это обязательное поле',
   shortOrLong: 'Должно быть от 2 до 30 символов',
-  notUrl: 'Здесь должна быть ссылка'
+  notUrl: 'Здесь должна быть ссылка',
+  keyword: 'Нужно ввести ключевое слово',
+  shortReq: 'В запросе должно быть не менее 2 символов'
 };
 const API_KEY = 'e5cac72062c44e969096f918472a98c5';
 const API_URL = 'http://localhost:3000';
