@@ -34,6 +34,7 @@ const singupApiErr = document.querySelector('#signup-api-error');
 const resultsGroup = document.querySelector('.results__group');
 const resultsSection = document.querySelector('.results');
 const noResults = document.querySelector('.no-result');
+const searchError = document.querySelector('#error-form-news');
 
 const popupSignin = new Popup(signinPopup, authButton);
 popupSignin.addListenersOpen();
@@ -55,7 +56,7 @@ const headerRender = header.render;
 const newsCard = new NewsCard(cardMurkup, mainApi);
 const renderLikeIcon = newsCard.renderIcon;
 
-const signinForm = new Form(formSignin, popupSignin, mainApi, headerRender, singinApiErr, renderLikeIcon);
+const signinForm = new Form(formSignin, popupSignin, mainApi, headerRender, singinApiErr);
 signinForm.setListeners(formSignin, signinForm.signin);
 
 const signupForm = new Form(formSignup, popupSignup, mainApi, undefined, singupApiErr, popupReg, );
@@ -63,14 +64,14 @@ signupForm.setListeners(formSignup, signupForm.signup);
 
 const newsApi = new NewsApi(API_KEY, '2020-10-20', '2020-10-27', BASE_URL_NEWS);
 
-const newsCardList = new NewsCardList(splitResults, resultsGroup);
+const newsCardList = new NewsCardList(splitResults, resultsGroup, renderLikeIcon, searchError);
 const renderResultsSearch = newsCardList.renderResults;
+const renderNewsError = newsCardList.renderError;
+const renderLoader = newsCardList.renderLoader;
 
 
-const newsForm = new NewsForm(formNews, newsApi, newsCard, noResults, resultsSection, renderResultsSearch);
+const newsForm = new NewsForm(formNews, newsApi, newsCard, noResults, resultsSection, renderResultsSearch, renderNewsError, renderLoader);
 newsForm.addListener();
-
-
 
 new FormValidator(formSignin, errorMessages, authPopupCloseButton)
 new FormValidator(formSignup, errorMessages, regPopupCloseButton)

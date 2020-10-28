@@ -1,5 +1,5 @@
 export class NewsForm {
-  constructor(form, api, newsCard, noResults, resultsSection, renderResultsSearch) {
+  constructor(form, api, newsCard, noResults, resultsSection, renderResultsSearch, renderError, renderLoader) {
 
     this._form = form;
     this._api = api;
@@ -7,11 +7,15 @@ export class NewsForm {
     this._noResults = noResults;
     this._resultsSection = resultsSection;
     this._renderResultsSearch = renderResultsSearch;
+    this._renderError = renderError;
+    this._renderLoader = renderLoader;
 
     this.findNews = this.findNews.bind(this);
     this._removeAllNews = this._removeAllNews.bind(this);
   }
+
   findNews(event) {
+    this._renderLoader(true);
     event.preventDefault();
     const keyWord = this._form.querySelector('.search-form__input');
     this._api.getNews(keyWord.value).then((data) => {
@@ -33,18 +37,22 @@ export class NewsForm {
           const card = this._newsCard.create(elem);
           results.push(card);
         });
+
         this._renderResultsSearch(results);
       }
     })
       .catch((err) => {
-        console.log(err)
-      });
+        this._renderError(err);
+      })
+      .finally(() => {
+        this._renderLoader(false);
+      })
+
   }
 
   _removeAllNews() {
     this._resultsSection.querySelectorAll('.card').forEach(card => {
       card.remove();
-      card = null;
     })
   }
 

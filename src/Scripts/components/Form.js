@@ -1,12 +1,11 @@
 export class Form {
-  constructor(form, popup, api, headerRender, apiError, regPopup, renderIcon) {
+  constructor(form, popup, api, headerRender, apiError, regPopup) {
     this._form = form;
     this._popup = popup;
     this._api = api;
     this._regPopup = regPopup;
     this.headerRender = headerRender;
     this._apiError = apiError;
-    this._renderIcon = renderIcon;
 
     this.signin = this.signin.bind(this);
     this.signup = this.signup.bind(this);
@@ -25,7 +24,6 @@ export class Form {
         this._form.reset();
         this._popup.close();
         this.headerRender();
-        this._renderIcon();
       })
       .catch((err) => {
         if (err.statusCode === 400) {
