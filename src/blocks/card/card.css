@@ -12,6 +12,9 @@
   min-height: 576px;
   position: relative;
   text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 @media screen and (max-width: 800px) {

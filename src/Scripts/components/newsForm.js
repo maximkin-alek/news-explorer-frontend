@@ -21,7 +21,8 @@ export class NewsForm {
 
       this._renderLoader(true);
       const keyWord = this._form.querySelector('.search-form__input');
-      this._api.getNews(keyWord.value).then((data) => {
+      const saveKeyWord = keyWord.value;
+      this._api.getNews(saveKeyWord).then((data) => {
 
         this._form.reset();
 
@@ -37,7 +38,7 @@ export class NewsForm {
           const results = [];
 
           data.articles.forEach((elem) => {
-            const card = this._newsCard.create(elem);
+            const card = this._newsCard.create(elem, saveKeyWord);
             results.push(card);
           });
 
@@ -45,7 +46,7 @@ export class NewsForm {
         }
       })
         .catch((err) => {
-          if (err.statusCode = 500) {
+          if (err.statusCode === 500) {
             err.message = 'Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз'
           }
           this._renderError(err);

@@ -1,3 +1,32 @@
+{
+
+}
+const signinPopup = document.querySelector('.popup-signin');
+const signupPopup = document.querySelector('.popup-signup');
+const regPopup = document.querySelector('.popup-registered');
+const authButtons = document.querySelectorAll('.button-auth');
+const regButton = document.querySelectorAll('.button-reg');
+const buttonMore = document.querySelector('.results__button');
+const registeredButton = document.querySelectorAll('.popup-registered__button');
+const authPopupCloseButton = document.querySelector('.popup-signin__close');
+const regPopupCloseButton = document.querySelector('.popup-signup__close');
+const registeredPopupCloseButton = document.querySelector('.popup-registered__close');
+const formSignin = document.querySelector('#form-signin');
+const formSignup = document.querySelector('#form-signup');
+const formNews = document.querySelector('#form-news');
+const articleItems = document.querySelectorAll('.saved-articles');
+const userItems = document.querySelectorAll('.user-item');
+const authItems = document.querySelectorAll('.auth-item');
+const singinApiErr = document.querySelector('#signin-api-error');
+const singupApiErr = document.querySelector('#signup-api-error');
+const resultsGroup = document.querySelector('.results__group');
+const resultsSection = document.querySelector('.results');
+const noResults = document.querySelector('.no-result');
+const searchError = document.querySelector('#error-news-input');
+const logoutIcon = document.querySelector('.header__logout-icon');
+const headerItem = document.querySelector('.header');
+const headerLogo = document.querySelector('.header__text');
+
 const errorMessages = {
   empty: 'Это обязательное поле',
   shortOrLong: 'Должно быть от 2 до 30 символов',
@@ -7,6 +36,8 @@ const errorMessages = {
 };
 const API_KEY = 'e5cac72062c44e969096f918472a98c5';
 const API_URL = 'http://localhost:3000';
+// https://api.alex-newsexp.tk
+// 'http://localhost:3000'
 const BASE_URL_NEWS = 'http://newsapi.org/v2/everything';
 const cardMurkup = `<a class="card" href="" target="_blank">
 <img
@@ -20,4 +51,8 @@ const cardMurkup = `<a class="card" href="" target="_blank">
 <p class="card__source"></p>
 </a>`
 
-export { errorMessages, API_KEY, API_URL, BASE_URL_NEWS, cardMurkup }
+export {
+  errorMessages, API_KEY, API_URL, BASE_URL_NEWS, cardMurkup, signinPopup, signupPopup, regPopup, authButtons, regButton, buttonMore, registeredButton, authPopupCloseButton, regPopupCloseButton,
+  registeredPopupCloseButton, formSignin, formSignup, formNews, articleItems, userItems, authItems, singinApiErr, singupApiErr, resultsGroup,
+  resultsSection, noResults, searchError, logoutIcon, headerItem, headerLogo
+}

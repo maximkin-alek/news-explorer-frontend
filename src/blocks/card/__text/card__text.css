@@ -6,8 +6,7 @@
   line-height: 22px;
   color: #1A1B22;
   margin: 16px 24px 18px;
-  height:  110px;
-  overflow: hidden;
+  height:  fit-content;
 }
 
 @media screen and (max-width: 800px) {

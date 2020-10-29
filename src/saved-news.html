@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.css %>" />
   </head>
   <body>
-    <header class="header header_white-theme">
+    <header class="header">
       <p class="header__text header__text_white-theme">NewsExplorer</p>
       <nav class="header__menu">
         <ul class="header__links">
@@ -22,26 +22,25 @@
               >Главная</a
             >
           </li>
-          <li class="header__list-item header__list-item_isVisible">
+          <li
+            class="header__list-item saved-articles header__list-item_isVisible"
+          >
             <a
               class="link header__link header__link_white-theme header__link_isActive"
               href="./saved-news.html"
               >Сохранённые статьи</a
             >
           </li>
-          <li class="header__list-item header__list-item_isVisible">
+          <li class="header__list-item user-item">
             <button
-              class="button button_isVisible header__button header__button_white-theme"
+              class="button button_isVisible header__button header__user-button header__button_white-theme"
             >
-              Александр<img
+              <img
                 class="header__logout-icon"
                 src="<%= require('./images/logout-black.svg') %>"
                 alt="иконка выхода"
               />
             </button>
-          </li>
-          <li class="header__list-item">
-            <button class="button button-auth header__button">Авторизоваться</button>
           </li>
         </ul>
       </nav>
@@ -52,23 +51,23 @@
         <li class="header__list-item header__list-item_isVisible">
           <a class="link header__link" href="./index.html">Главная</a>
         </li>
-        <li class="header__list-item header__list-item_isVisible">
+        <li
+          class="header__list-item header__list-item_isVisible saved-articles"
+        >
           <a class="link header__link" href="./saved-news.html"
             >Сохранённые статьи</a
           >
         </li>
-        <li class="header__list-item header__list-item_isVisible">
-          <!-- Для отображения кнопок необходимо использовать модификатор button_isVisible -->
-          <button class="button button_isVisible header__button">
-            Александр<img
+        <li class="header__list-item user-item header__list-item_isVisible">
+          <button
+            class="button button_isVisible header__button header__user-button"
+          >
+            <img
               class="header__logout-icon"
               src="<%= require('./images/logout.svg') %>"
               alt="иконка выхода"
             />
           </button>
-        </li>
-        <li class="header__list-item">
-          <button class="button button-auth header__button">Авторизоваться</button>
         </li>
       </ul>
     </header>
@@ -217,7 +216,7 @@
         <img
           src="<%=require('./images/close.svg')%>"
           alt="Закрыть форму"
-          class="popup__close popup-add-card__close"
+          class="popup__close popup-signin__close"
         />
         <h3 class="popup__title">Вход</h3>
         <form class="popup__form" name="signin" id="form-signin">
@@ -231,7 +230,7 @@
             required
           />
           <!--для отображения ошибки необходимо ввести текст в поле span  -->
-          <span class="error-messege" id="error-signin-email">1</span>
+          <span class="error-messege" id="error-signin-email"></span>
           <label class="popup__label" for="signin-password">Пароль</label>
           <input
             name="password"
@@ -241,15 +240,22 @@
             id="signin-password"
             required
           />
-          <!-- для отображения ошибки необходимо ввести текст в поле span -->
-          <span class="error-messege" id="error-signin-password">2</span>
+          <span class="error-messege" id="error-signin-password"></span>
 
-          <button type="submit" class="button popup__button button_isVisible">
+          <span
+            class="error-messege popup-signup__duble-error"
+            id="signin-api-error"
+          ></span>
+          <button
+            type="submit"
+            class="button popup__button button_isVisible"
+            disabled
+          >
             Войти
           </button>
           <p class="popup__text">
             или
-            <button type="button" class="popup__reg-button">
+            <button type="button" class="popup__reg-button button-reg">
               Зарегистрироваться
             </button>
           </p>
@@ -262,7 +268,7 @@
         <img
           src="<%=require('./images/close.svg')%>"
           alt="Закрыть форму"
-          class="popup__close popup-add-card__close"
+          class="popup__close popup-signup__close"
         />
         <h3 class="popup__title">Регистрация</h3>
         <form class="popup__form" name="signup" id="form-signup">
@@ -276,7 +282,7 @@
             required
           />
           <!--для отображения ошибки необходимо ввести текст в поле span  -->
-          <span class="error-messege" id="error-signup-email">1</span>
+          <span class="error-messege" id="error-signup-email"></span>
 
           <label class="popup__label" for="signup-password">Пароль</label>
           <input
@@ -286,10 +292,9 @@
             placeholder="Введите пароль"
             id="signup-password"
             required
-            minlength="8"
           />
           <!--для отображения ошибки необходимо ввести текст в поле span  -->
-          <span class="error-messege" id="error-signup-password">2</span>
+          <span class="error-messege" id="error-signup-password"></span>
 
           <label class="popup__label" for="signup-name">Имя</label>
           <input
@@ -302,38 +307,43 @@
             minlength="2"
             maxlength="30"
           />
-          <!--для отображения ошибки необходимо ввести текст в поле span  -->
-          <span class="error-messege" id="error-signup-name">3</span>
-          <!--для отображения ошибки необходимо ввести текст в поле span  -->
-          <span class="error-messege popup-signup__duble-error" id="duble-error"
-            >Такой пользователь уже есть</span
+          <span class="error-messege" id="error-signup-name"></span>
+          <span
+            class="error-messege popup-signup__duble-error"
+            id="signup-api-error"
+          ></span>
+          <button
+            type="submit"
+            class="button popup__button button_isVisible"
+            disabled
           >
-          <button type="submit" class="button popup__button button_isVisible">
             Зарегистрироваться
           </button>
           <p class="popup__text">
-            или <button type="button " class="popup__reg-button button-auth">Войти</button>
+            или
+            <button type="button" class="popup__reg-button button-auth">
+              Войти
+            </button>
           </p>
         </form>
       </div>
     </div>
-    <!-- Для отображения попапа необходимо добавить модификатор popup_is-opened -->
+
     <div class="popup popup-registered">
       <div class="popup__content popup-registered__content">
         <img
           src="<%=require('./images/close.svg')%>"
           alt="Закрыть форму"
-          class="popup__close popup-add-card__close"
+          class="popup__close popup-registered__close"
         />
         <h3 class="popup__title">Пользователь успешно зарегистрирован!</h3>
         <button
-          type="button button-auth"
-          class="popup__reg-button popup-registered__button"
+          type="button"
+          class="popup__reg-button button-auth popup-registered__button"
         >
           Войти
         </button>
       </div>
     </div>
-    <script src="<%= htmlWebpackPlugin.files.js %>"></script>
   </body>
 </html>

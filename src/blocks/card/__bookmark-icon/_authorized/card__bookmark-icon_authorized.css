@@ -1,6 +1,6 @@
-.card__bookmark-icon.card__bookmark-icon_authorized {
+.card__bookmark-icon_authorized {
   background: url(../../../../images/bookmark.svg);
 }
-.card__bookmark-icon.card__bookmark-icon_authorized:hover {
+.card__bookmark-icon_authorized:hover {
   background: url(../../../../images/bookmark-hover.svg);
 }

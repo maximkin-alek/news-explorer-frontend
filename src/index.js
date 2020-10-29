@@ -9,33 +9,10 @@ import { NewsForm } from './Scripts/components/newsForm'
 import { NewsCardList } from './Scripts/components/NewsCardList'
 
 import { showMobileMenu, mobileMenuButton, splitResults, formatArticleDate} from './Scripts/utils/utils'
-import { errorMessages, API_KEY, API_URL, BASE_URL_NEWS, cardMurkup } from './Scripts/constants/constants'
-
-
+import { errorMessages, API_KEY, API_URL, BASE_URL_NEWS, cardMurkup,signinPopup, signupPopup, regPopup, authButtons, regButton, buttonMore, registeredButton, authPopupCloseButton, regPopupCloseButton,
+  registeredPopupCloseButton, formSignin, formSignup, formNews, articleItems, userItems, authItems, singinApiErr, singupApiErr, resultsGroup,
+  resultsSection, noResults, searchError } from './Scripts/constants/constants'
 import './pages/index.css';
-
-const signinPopup = document.querySelector('.popup-signin');
-const signupPopup = document.querySelector('.popup-signup');
-const regPopup = document.querySelector('.popup-registered');
-const authButtons = document.querySelectorAll('.button-auth');
-const regButton = document.querySelectorAll('.button-reg');
-const buttonMore = document.querySelector('.results__button');
-const registeredButton = document.querySelectorAll('.popup-registered__button');
-const authPopupCloseButton = document.querySelector('.popup-signin__close');
-const regPopupCloseButton = document.querySelector('.popup-signup__close');
-const registeredPopupCloseButton = document.querySelector('.popup-registered__close');
-const formSignin = document.querySelector('#form-signin');
-const formSignup = document.querySelector('#form-signup');
-const formNews = document.querySelector('#form-news');
-const articleItems = document.querySelectorAll('.saved-articles');
-const userItems = document.querySelectorAll('.user-item');
-const authItems = document.querySelectorAll('.auth-item');
-const singinApiErr = document.querySelector('#signin-api-error');
-const singupApiErr = document.querySelector('#signup-api-error');
-const resultsGroup = document.querySelector('.results__group');
-const resultsSection = document.querySelector('.results');
-const noResults = document.querySelector('.no-result');
-const searchError = document.querySelector('#error-news-input');
 
 const popupSignin = new Popup(signinPopup, authButtons);
 popupSignin.addListenersOpen();
@@ -51,7 +28,8 @@ popupReg.addlistenerClose(registeredPopupCloseButton);
 const mainApi = new MainApi(API_URL);
 
 const header = new Header(mainApi, articleItems, authItems, userItems, showMobileMenu, mobileMenuButton);
-header.render();
+header.render('white');
+header.setListeners();
 const headerRender = header.render;
 
 const newsCard = new NewsCard(cardMurkup, mainApi, formatArticleDate);

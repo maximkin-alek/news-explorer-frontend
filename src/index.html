@@ -15,7 +15,6 @@
       <p class="text header__text">NewsExplorer</p>
       <nav class="header__menu">
         <ul class="header__links">
-          <!-- Для отображения пунктов меню необходимо использовать модификатор  header__list-item_isVisible -->
           <li class="header__list-item header__list-item_isVisible">
             <a
               class="link header__link header__link_isActive"
@@ -28,10 +27,12 @@
               >Сохранённые статьи</a
             >
           </li>
-          <li class="header__list-item user-item header__list-item_isVisible">
+          <li class="header__list-item user-item">
             <!-- Для отображения кнопок необходимо использовать модификатор button_isVisible -->
-            <button class="button header__button button_isVisible">
-              Александр<img
+            <button
+              class="button header__button button_isVisible header__user-button"
+            >
+              <img
                 class="header__logout-icon"
                 src="<%= require('./images/logout.svg') %>"
                 alt="иконка выхода"
@@ -45,10 +46,7 @@
           </li>
         </ul>
       </nav>
-      <!-- Состояние кнопки мобильного меню регулируется модификаторам  header__mobile-button_open-->
       <div class="header__mobile-button"></div>
-      <!-- Отображение мобильного меню с помощью модификатора  header__mobile-menu_isVisible
-      При открытии мобильного меню хедеру будет задаваться черный фон средствами JS-->
       <ul class="header__mobile-menu">
         <li class="header__list-item header__list-item_isVisible">
           <a class="link header__link" href="./index.html">Главная</a>
@@ -58,10 +56,12 @@
             >Сохранённые статьи</a
           >
         </li>
-        <li class="header__list-item user-item header__list-item_isVisible">
+        <li class="header__list-item user-item">
           <!-- Для отображения кнопок необходимо использовать модификатор button_isVisible -->
-          <button class="button button_isVisible header__button">
-            Александр<img
+          <button
+            class="button button_isVisible header__button header__user-button"
+          >
+            <img
               class="header__logout-icon"
               src="<%= require('./images/logout.svg') %>"
               alt="иконка выхода"
@@ -190,7 +190,7 @@
         </div>
       </div>
     </section>
-    <!-- Для отображения попапа необходимо добавить модификатор popup_is-opened -->
+
     <div class="popup popup-signin">
       <div class="popup__content">
         <img
@@ -308,7 +308,7 @@
         </form>
       </div>
     </div>
-    <!-- Для отображения попапа необходимо добавить модификатор popup_is-opened -->
+
     <div class="popup popup-registered">
       <div class="popup__content popup-registered__content">
         <img
@@ -326,34 +326,4 @@
       </div>
     </div>
   </body>
-
-  <template id="header-no-auth">
-    <ul class="header__links">
-      <li class="header__list-item header__list-item_isVisible">
-        <a class="link header__link header__link_isActive" href="./index.html"
-          >Главная</a
-        >
-      </li>
-      <li class="header__list-item header__list-item_isVisible">
-        <button class="button button-auth header__button button_isVisible">
-          Авторизоваться
-        </button>
-      </li>
-    </ul>
-  </template>
-
-  <template id="header-auth">
-    <ul class="header__links">
-      <li class="header__list-item header__list-item_isVisible">
-        <a class="link header__link header__link_isActive" href="./index.html"
-          >Главная</a
-        >
-      </li>
-      <li class="header__list-item">
-        <a class="link header__link" href="./saved-news.html"
-          >Сохранённые статьи</a
-        >
-      </li>
-    </ul>
-  </template>
 </html>

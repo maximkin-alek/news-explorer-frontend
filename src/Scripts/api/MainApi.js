@@ -53,9 +53,36 @@ export class MainApi {
 
   getArticles() { }
 
-  createArticle() { }
+  createArticle(articleLink, articleKeyword, articleTitle, articleText, articleDate, articleSource, articleImage,) {
+    return fetch(`${this._url}/articles`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      credentials: 'include',
+      body: JSON.stringify({
+        link: articleLink,
+        keyword: articleKeyword,
+        title: articleTitle,
+        text: articleText,
+        date: articleDate,
+        source: articleSource,
+        image: articleImage
+      })
+    })
+      .then((res) => this._handlePromise(res))
+  }
 
-  removeArticle() { }
+  removeArticle(articleId) {
+    return fetch(`${this._url}/articles/${articleId}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      credentials: 'include',
+      })
+      .then((res) => this._handlePromise(res))
+  }
 
 
 

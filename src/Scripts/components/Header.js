@@ -9,14 +9,22 @@ export class Header {
     this._mobileMenuButton = mobileMenuButton;
 
     this.render = this.render.bind(this);
-    this._setListeners = this._setListeners.bind(this);
+    this.setListeners = this.setListeners.bind(this);
+    this._renderByColor = this._renderByColor.bind(this);
   }
 
-  render() {
-// настроить отрисовку имени на кнопке
+  render(iconColor) {
+
     this._api.getUserData()
       .then((data) => {
-        this._setListeners();
+
+        let color = iconColor;
+        const userButtons = document.querySelectorAll('.header__user-button')
+        userButtons.forEach(element => {
+          element.textContent = data.name;
+          this._renderByColor(element, color);
+        })
+
         this._articleItems.forEach(element => {
           element.classList.add('header__list-item_isVisible');
         })
@@ -28,7 +36,7 @@ export class Header {
         })
       })
       .catch((err) => {
-        this._setListeners();
+        this.setListeners();
         this._articleItems.forEach(element => {
           element.classList.remove('header__list-item_isVisible');
         })
@@ -41,8 +49,25 @@ export class Header {
       })
 
   }
-  _setListeners() {
-    this._mobileMenuButton.addEventListener('click', this._showMobileMenu);
+  setListeners(theme, header, logo) {
+    this._mobileMenuButton.addEventListener('click', () => this._showMobileMenu(theme, header, logo));
   };
 
+  _renderByColor(element, iconColor) {
+    if (iconColor === 'white') {
+      element.insertAdjacentHTML('beforeend', `<img
+    class= "header__logout-icon"
+    src = "./images/logout.svg"
+    alt = "иконка выхода"
+      /> `)
+    }
+    else {
+      element.insertAdjacentHTML('beforeend', `<img
+    class= "header__logout-icon"
+    src = "./images/logout-black.svg"
+    alt = "иконка выхода"
+      /> `)
+    }
+
+  }
 }

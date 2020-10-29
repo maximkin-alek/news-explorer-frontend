@@ -2,9 +2,17 @@ const mobileMenuButton = document.querySelector('.header__mobile-button');
 const mobileMenu = document.querySelector('.header__mobile-menu');
 
 
-function showMobileMenu() {
-  mobileMenuButton.classList.toggle('header__mobile-button_open');
-  mobileMenu.classList.toggle('header__mobile-menu_isVisible');
+function showMobileMenu(theme, header, logo) {
+  if (theme === 'white') {
+    header.classList.toggle('header_white-theme');
+    logo.classList.toggle('header__text_white-theme');
+    mobileMenuButton.classList.toggle('header__mobile-button_open');
+    mobileMenu.classList.toggle('header__mobile-menu_isVisible');
+  } else {
+    mobileMenuButton.classList.toggle('header__mobile-button_open');
+    mobileMenu.classList.toggle('header__mobile-menu_isVisible');
+  }
+
 };
 
 function splitResults(source, results) {
@@ -24,7 +32,7 @@ function formatArticleDate(articleDate) {
   });
   let dateStr = (formatter.format(date));
   dateStr = dateStr.split(' ', 3);
-  dateStr[1]+=',';
+  dateStr[1] += ',';
   return dateStr.join(' ');
 }
 

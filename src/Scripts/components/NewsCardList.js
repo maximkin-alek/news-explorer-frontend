@@ -21,9 +21,9 @@ export class NewsCardList {
 
     shownResults.forEach(item => {
       this._resultsGroup.appendChild(item);
-      const icon = this._resultsGroup.querySelectorAll('.card__bookmark-icon');
-      this._renderIcon(icon);
     });
+    const icons = this._resultsGroup.querySelectorAll('.card__bookmark-icon');
+    this._renderIcon(icons);
   }
 
   renderLoader(IsLoad) {
@@ -49,5 +49,5 @@ export class NewsCardList {
       }
     });
   }
-  
+
 }
