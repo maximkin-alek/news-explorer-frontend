@@ -30,7 +30,7 @@ export class Articles {
 
       this._renderSavedArticles(this._savedArticlesContainer, this._savedArticles);
     })
-      .catch(err => alert(err));
+      .catch(err => console.log(err));
   }
 
   renderArticlesInfo() {
@@ -64,7 +64,7 @@ export class Articles {
 
         this._showSavedArticlesInfo(userName, articlesQuantity, variantsOfWords, words[0], words[1], words[2])
       })
-      .catch(err => alert(err));
+      .catch(err => console.log(err));
   }
 
   renderKeywords() {
@@ -76,8 +76,6 @@ export class Articles {
 
     // массив из объекта, упорядочен по популярности ключевого слова
     const keysSorted = Object.keys(keywordsObj).sort(function (a, b) { return keywordsObj[b] - keywordsObj[a] });
-    console.log(keysSorted);
-
     // Страховка от undefined
     let keywordOne = '';
     let keywordTwo = '';

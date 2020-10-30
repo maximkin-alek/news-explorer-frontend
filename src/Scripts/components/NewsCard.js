@@ -57,7 +57,7 @@ export class NewsCard {
         card = null;
       })
       .catch((err) => {
-        alert(`Ошибочка вышла, ${err}`)
+        alert(err)
       })
   }
 
@@ -75,10 +75,9 @@ export class NewsCard {
               this._api.removeArticle(event.target.parentElement.id)
                 .then((data) => {
                   event.target.classList.remove('card__bookmark-icon_liked');
-                  console.log(data);
                 })
                 .catch((err) => {
-                  console.log(err);
+                  alert(err);
                 })
             } else {
               const articleLink = event.target.parentElement.href;
@@ -95,7 +94,7 @@ export class NewsCard {
                   event.target.parentElement.id = data.id;
                 })
                 .catch((err) => {
-                  console.log(err);
+                  alert(err);
                 })
             }
           }))

@@ -27,7 +27,8 @@ popupReg.addlistenerClose(registeredPopupCloseButton);
 const mainApi = new MainApi(API_URL);
 const headerParams = {mainApi, articleItems, authItems, userItems, showMobileMenu, mobileMenuButton}
 const header = new Header(headerParams);
-header.render('white');
+header.render('white', false);
+header.removeListener();
 header.setListeners();
 const headerRender = header.render;
 

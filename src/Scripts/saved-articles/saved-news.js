@@ -17,8 +17,8 @@ import '../../pages/saved-news.css';
 const mainApi = new MainApi(API_URL);
 const headerParams = {mainApi, articleItems, authItems, userItems, showMobileMenu, mobileMenuButton}
 const header = new Header(headerParams);
-header.setListeners('white', headerItem, headerLogo)
-header.render();
+header.setListeners('white', headerItem, headerLogo);
+header.render('black', true);
 
 
 const newsCard = new NewsCard(mainApi, formatArticleDate);

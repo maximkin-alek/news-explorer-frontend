@@ -15,9 +15,10 @@ export class Header {
     this.render = this.render.bind(this);
     this.setListeners = this.setListeners.bind(this);
     this._renderByColor = this._renderByColor.bind(this);
+    this.removeListener = this.removeListener.bind(this);
   }
 
-  render(iconColor) {
+  render(iconColor, pageArticles) {
        this._api.getUserData()
       .then((data) => {
 
@@ -40,7 +41,10 @@ export class Header {
         })
       })
       .catch((err) => {
-        this.setListeners();
+        if(pageArticles) {
+
+          window.location.replace('https://maximkin-alek.github.io/news-explorer-frontend/index.html');
+        }
         this._articleItems.forEach(element => {
           element.classList.remove('header__list-item_isVisible');
         })
@@ -56,6 +60,9 @@ export class Header {
   setListeners(theme, header, logo) {
     this._mobileMenuButton.addEventListener('click', () => this._showMobileMenu(theme, header, logo));
   };
+  removeListener(theme, header, logo) {
+    this._mobileMenuButton.removeEventListener('click', () => this._showMobileMenu(theme, header, logo));
+  }
 
   _renderByColor(element, iconColor) {
     if (iconColor === 'white') {
