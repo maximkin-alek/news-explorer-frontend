@@ -1,3 +1,5 @@
+import { data } from "autoprefixer";
+
 export class Header {
   constructor(api, articleItems, authItems, userItems, showMobileMenu, mobileMenuButton) {
 
@@ -8,16 +10,18 @@ export class Header {
     this._showMobileMenu = showMobileMenu;
     this._mobileMenuButton = mobileMenuButton;
 
+    this.userName = ''
+
     this.render = this.render.bind(this);
     this.setListeners = this.setListeners.bind(this);
     this._renderByColor = this._renderByColor.bind(this);
   }
 
   render(iconColor) {
-
-    this._api.getUserData()
+       this._api.getUserData()
       .then((data) => {
 
+        this.userName = data.name;
         let color = iconColor;
         const userButtons = document.querySelectorAll('.header__user-button')
         userButtons.forEach(element => {

@@ -16,10 +16,16 @@ function showMobileMenu(theme, header, logo) {
 };
 
 function splitResults(source, results) {
-  for (let i = 0; i <= 2; i++) {
-    results.push(source[i]);
+  if (source.length >= 3) {
+    for (let i = 0; i <= 2; i++) {
+      results.push(source[i]);
+    } source.splice(0, 3);
+  } else {
+    for (let i = 0; i < source.length; i++) {
+      results.push(source[i]);
+      source.splice(0, 1)
+    }
   }
-  source.splice(0, 3);
 }
 
 function formatArticleDate(articleDate) {
@@ -36,4 +42,4 @@ function formatArticleDate(articleDate) {
   return dateStr.join(' ');
 }
 
-export { showMobileMenu, mobileMenuButton, splitResults, formatArticleDate };
+export { showMobileMenu, mobileMenuButton, splitResults, formatArticleDate }

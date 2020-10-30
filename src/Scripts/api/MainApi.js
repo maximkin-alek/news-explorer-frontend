@@ -3,10 +3,12 @@ export class MainApi {
     this._url = url;
   }
 
-
   _handlePromise(res) {
     if (res.ok) {
       return res.json()
+    }
+    if (res.status === 429) {
+      throw res;
     }
     const json = res.json();
     return json.then(Promise.reject.bind(Promise))
@@ -18,7 +20,6 @@ export class MainApi {
       headers: {
         'Content-Type': 'application/json'
       },
-      credentials: 'include',
       body: JSON.stringify({
         name: userName,
         email: userEmail,
@@ -51,7 +52,12 @@ export class MainApi {
       .then((res) => this._handlePromise(res))
   }
 
-  getArticles() { }
+  getArticles() {
+    return fetch(`${this._url}/articles`, {
+      credentials: 'include',
+    })
+      .then((res) => this._handlePromise(res))
+  }
 
   createArticle(articleLink, articleKeyword, articleTitle, articleText, articleDate, articleSource, articleImage,) {
     return fetch(`${this._url}/articles`, {
@@ -80,10 +86,7 @@ export class MainApi {
         'Content-Type': 'application/json'
       },
       credentials: 'include',
-      })
+    })
       .then((res) => this._handlePromise(res))
   }
-
-
-
 }

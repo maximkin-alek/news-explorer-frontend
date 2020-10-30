@@ -26,6 +26,12 @@ const searchError = document.querySelector('#error-news-input');
 const logoutIcon = document.querySelector('.header__logout-icon');
 const headerItem = document.querySelector('.header');
 const headerLogo = document.querySelector('.header__text');
+const savedArticlesContainer = document.querySelector('.articles__card-group');
+const savedArticlesDescription = document.querySelector('.articles__subtitle');
+const savedArticlesKeywords = document.querySelector('.articles__keywords');
+const firstKeyword = document.querySelector('#keyword-1');
+const secondKeyword = document.querySelector('#keyword-2');
+const thirdKeyword = document.querySelector('#keyword-3');
 
 const errorMessages = {
   empty: 'Это обязательное поле',
@@ -34,7 +40,7 @@ const errorMessages = {
   keyword: 'Нужно ввести ключевое слово',
   shortReq: 'В запросе должно быть не менее 2 символов'
 };
-const API_KEY = 'e5cac72062c44e969096f918472a98c5';
+const API_KEY = '5b480448dcfa4586a1ace0189de62d95';
 const API_URL = 'http://localhost:3000';
 // https://api.alex-newsexp.tk
 // 'http://localhost:3000'
@@ -49,10 +55,24 @@ const cardMurkup = `<a class="card" href="" target="_blank">
 <p class="card__title"></p>
 <p class="card__text"></p>
 <p class="card__source"></p>
-</a>`
+</a>`;
+const articleMurkup = `<a class="card" href="" target="_blank">
+<img
+  class="card__image"
+  alt="Иллюстрация новостной статьи"
+  src=""
+/>
+<p class="card__theme"></p>
+<div class="card__delete-icon"></div>
+<p class="card__date"></p>
+<p class="card__title"></p>
+<p class="card__text"></p>
+<p class="card__source"></p>
+</a>`;
+
 
 export {
   errorMessages, API_KEY, API_URL, BASE_URL_NEWS, cardMurkup, signinPopup, signupPopup, regPopup, authButtons, regButton, buttonMore, registeredButton, authPopupCloseButton, regPopupCloseButton,
   registeredPopupCloseButton, formSignin, formSignup, formNews, articleItems, userItems, authItems, singinApiErr, singupApiErr, resultsGroup,
-  resultsSection, noResults, searchError, logoutIcon, headerItem, headerLogo
+  resultsSection, noResults, searchError, logoutIcon, headerItem, headerLogo, articleMurkup, savedArticlesContainer, savedArticlesDescription, firstKeyword, secondKeyword, thirdKeyword, savedArticlesKeywords
 }

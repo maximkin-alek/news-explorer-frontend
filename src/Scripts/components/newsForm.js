@@ -1,5 +1,5 @@
 export class NewsForm {
-  constructor(form, api, newsCard, noResults, resultsSection, renderResultsSearch, renderError, renderLoader, NewsFormValidator) {
+  constructor(form, api, newsCard, noResults, resultsSection, renderResultsSearch, renderError, renderLoader, NewsFormValidator, cardMurkup) {
 
     this._form = form;
     this._api = api;
@@ -10,6 +10,7 @@ export class NewsForm {
     this._renderError = renderError;
     this._renderLoader = renderLoader;
     this._NewsFormValidator = NewsFormValidator;
+    this.cardMurkup = cardMurkup;
 
     this.findNews = this.findNews.bind(this);
     this._removeAllNews = this._removeAllNews.bind(this);
@@ -17,6 +18,8 @@ export class NewsForm {
 
   findNews(event) {
     event.preventDefault();
+    this._resultsSection.classList.remove('results_isVisible');
+
     if (this._NewsFormValidator(this._form)) {
 
       this._renderLoader(true);
@@ -38,7 +41,7 @@ export class NewsForm {
           const results = [];
 
           data.articles.forEach((elem) => {
-            const card = this._newsCard.create(elem, saveKeyWord);
+            const card = this._newsCard.create(elem, this.cardMurkup, saveKeyWord);
             results.push(card);
           });
 

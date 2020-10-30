@@ -12,7 +12,6 @@ export class Form {
     this.setListeners = this.setListeners.bind(this);
   }
 
-
   signin(event) {
     event.preventDefault();
 
@@ -23,13 +22,18 @@ export class Form {
       .then(() => {
         this._form.reset();
         this._popup.close();
-        this.headerRender();
+        this.headerRender('white');
       })
       .catch((err) => {
         if (err.statusCode === 400) {
           this._apiError.textContent = '';
           this._apiError.textContent = err.validation.body.message;
-        } else {
+        }
+        if (err.status === 429) {
+          this._apiError.textContent = '';
+          this._apiError.textContent = 'Cлишком много запросов, повторите попытку позднее';
+        }
+        else {
           this._apiError.textContent = err.message;
         }
 
