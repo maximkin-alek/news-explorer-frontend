@@ -1,5 +1,3 @@
-import { data } from "autoprefixer";
-
 export class Header {
   constructor(headerParams) {
 

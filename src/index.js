@@ -28,6 +28,7 @@ const mainApi = new MainApi(API_URL);
 const headerParams = {mainApi, articleItems, authItems, userItems, showMobileMenu, mobileMenuButton}
 const header = new Header(headerParams);
 header.render('white', false);
+// исправление задваивания слушателя при редиректе
 header.removeListener();
 header.setListeners();
 const headerRender = header.render;
