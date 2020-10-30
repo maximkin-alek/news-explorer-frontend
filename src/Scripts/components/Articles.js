@@ -26,6 +26,7 @@ export class Articles {
         this._savedArticles.push(savedCard);
         this._keywordsArr.push(elem.keyword);
       });
+      this.renderArticlesInfo();
 
       this._renderSavedArticles(this._savedArticlesContainer, this._savedArticles);
     })

@@ -35,4 +35,3 @@ const articlesParams =  { mainApi, articleMurkup, renderSavedArticles, showSaved
 
 const savedArticles = new Articles(articlesParams);
 savedArticles.showArticles();
-savedArticles.renderArticlesInfo();
