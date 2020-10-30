@@ -44,7 +44,7 @@ const API_KEY = '5b480448dcfa4586a1ace0189de62d95';
 const API_URL = 'https://api.alex-newsexp.tk';
 // https://api.alex-newsexp.tk
 // 'http://localhost:3000'
-const BASE_URL_NEWS = 'http://newsapi.org/v2/everything';
+const BASE_URL_NEWS = 'https://nomoreparties.co/news/v2/everything';
 const cardMurkup = `<a class="card" href="" target="_blank">
 <img
   class="card__image"
