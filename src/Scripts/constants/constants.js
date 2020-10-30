@@ -41,7 +41,7 @@ const errorMessages = {
   shortReq: 'В запросе должно быть не менее 2 символов'
 };
 const API_KEY = '5b480448dcfa4586a1ace0189de62d95';
-const API_URL = 'http://localhost:3000';
+const API_URL = 'https://api.alex-newsexp.tk';
 // https://api.alex-newsexp.tk
 // 'http://localhost:3000'
 const BASE_URL_NEWS = 'http://newsapi.org/v2/everything';

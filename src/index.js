@@ -8,10 +8,9 @@ import { NewsCard } from './Scripts/components/NewsCard'
 import { NewsForm } from './Scripts/components/newsForm'
 import { NewsCardList } from './Scripts/components/NewsCardList'
 
-import { showMobileMenu, mobileMenuButton, splitResults, formatArticleDate} from './Scripts/utils/utils'
+import { showMobileMenu, mobileMenuButton, splitResults, formatArticleDate, renderDates} from './Scripts/utils/utils'
 import { errorMessages, API_KEY, API_URL, BASE_URL_NEWS, cardMurkup,signinPopup, signupPopup, regPopup, authButtons, regButton, buttonMore, registeredButton, authPopupCloseButton, regPopupCloseButton,
-  registeredPopupCloseButton, formSignin, formSignup, formNews, articleItems, userItems, authItems, singinApiErr, singupApiErr, resultsGroup,
-  resultsSection, noResults, searchError } from './Scripts/constants/constants'
+  registeredPopupCloseButton, formSignin, formSignup, formNews, articleItems, userItems, authItems, singinApiErr, singupApiErr, resultsGroup, resultsSection, noResults, searchError,  } from './Scripts/constants/constants'
 import './pages/index.css';
 
 const popupSignin = new Popup(signinPopup, authButtons);
@@ -26,8 +25,8 @@ const popupReg = new Popup(regPopup, registeredButton)
 popupReg.addlistenerClose(registeredPopupCloseButton);
 
 const mainApi = new MainApi(API_URL);
-
-const header = new Header(mainApi, articleItems, authItems, userItems, showMobileMenu, mobileMenuButton);
+const headerParams = {mainApi, articleItems, authItems, userItems, showMobileMenu, mobileMenuButton}
+const header = new Header(headerParams);
 header.render('white');
 header.setListeners();
 const headerRender = header.render;
@@ -38,10 +37,10 @@ const renderLikeIcon = newsCard.renderIcon;
 const signinForm = new Form(formSignin, popupSignin, mainApi, headerRender, singinApiErr);
 signinForm.setListeners(formSignin, signinForm.signin);
 
-const signupForm = new Form(formSignup, popupSignup, mainApi, undefined, singupApiErr, popupReg, );
+const signupForm = new Form(formSignup, popupSignup, mainApi, undefined, singupApiErr, popupReg);
 signupForm.setListeners(formSignup, signupForm.signup);
 
-const newsApi = new NewsApi(API_KEY, '2020-10-20', '2020-10-27', BASE_URL_NEWS);
+const newsApi = new NewsApi(API_KEY, BASE_URL_NEWS, renderDates);
 const mainCardListOptions = {splitResults, resultsGroup, renderLikeIcon, searchError, buttonMore}
 
 const newsCardList = new NewsCardList(mainCardListOptions);

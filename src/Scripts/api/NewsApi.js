@@ -1,10 +1,9 @@
 export class NewsApi {
-  constructor(API_KEY, dateFrom, dateTo, BASE_URL_NEWS) {
+  constructor(API_KEY, BASE_URL_NEWS, renderDates) {
 
     this._API_KEY = API_KEY;
-    this._dateFrom = dateFrom;
-    this._dateTo = dateTo;
     this._BASE_URL_NEWS = BASE_URL_NEWS;
+    this._renderDates = renderDates;
 
     this._handlePromise = this._handlePromise.bind(this);
     this.getNews = this.getNews.bind(this);
@@ -19,7 +18,10 @@ export class NewsApi {
   }
 
   getNews(keyWord) {
-    return fetch(`${this._BASE_URL_NEWS}?q=${keyWord}&from=${this._dateFrom}&to=${this._dateTo}&sortBy=popularity&language
+    const dates = this._renderDates();
+    const nowDate = dates[0];
+    const weekAgoDate = dates[1];
+    return fetch(`${this._BASE_URL_NEWS}?q=${keyWord}&from=${nowDate}&to=${weekAgoDate}&sortBy=popularity&language
 =ru&pageSize=100&apiKey=${this._API_KEY}`)
       .then((res) => this._handlePromise(res))
   }

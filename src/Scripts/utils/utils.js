@@ -42,4 +42,11 @@ function formatArticleDate(articleDate) {
   return dateStr.join(' ');
 }
 
-export { showMobileMenu, mobileMenuButton, splitResults, formatArticleDate }
+function renderDates() {
+  let currentDate  = new Date();
+  let weekAgoDate = currentDate.getTime() - 604800000;
+  weekAgoDate = new Date(weekAgoDate);
+  return [currentDate, weekAgoDate]
+}
+
+export { showMobileMenu, mobileMenuButton, splitResults, formatArticleDate, renderDates }

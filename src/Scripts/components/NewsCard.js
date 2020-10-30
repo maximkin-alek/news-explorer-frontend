@@ -6,7 +6,7 @@ export class NewsCard {
     this.create = this.create.bind(this);
     this.renderIcon = this.renderIcon.bind(this);
     this.deleteCard = this.deleteCard.bind(this);
-    this.addListener = this.addListener.bind(this);
+    this.addListenerDeleteCard = this.addListenerDeleteCard.bind(this);
     this._removeListener = this._removeListener.bind(this);
   }
   create(obj, cardMurkup, keyword) {
@@ -109,7 +109,7 @@ export class NewsCard {
       })
   }
 
-  addListener(item) {
+  addListenerDeleteCard(item) {
     item.addEventListener('click', this.deleteCard)
   }
   _removeListener(card) {

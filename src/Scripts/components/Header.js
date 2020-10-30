@@ -1,14 +1,14 @@
 import { data } from "autoprefixer";
 
 export class Header {
-  constructor(api, articleItems, authItems, userItems, showMobileMenu, mobileMenuButton) {
+  constructor(headerParams) {
 
-    this._api = api;
-    this._articleItems = articleItems;
-    this._authItems = authItems;
-    this._userItems = userItems;
-    this._showMobileMenu = showMobileMenu;
-    this._mobileMenuButton = mobileMenuButton;
+    this._api = headerParams.mainApi;
+    this._articleItems = headerParams.articleItems;
+    this._authItems = headerParams.authItems;
+    this._userItems = headerParams.userItems;
+    this._showMobileMenu = headerParams.showMobileMenu;
+    this._mobileMenuButton = headerParams.mobileMenuButton;
 
     this.userName = ''
 
