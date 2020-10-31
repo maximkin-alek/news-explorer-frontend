@@ -35,8 +35,9 @@ const headerRender = header.render;
 
 const newsCard = new NewsCard(mainApi, formatArticleDate);
 const renderLikeIcon = newsCard.renderIcon;
+const renderIcon = newsCard.renderIcon;
 
-const signinForm = new Form(formSignin, popupSignin, mainApi, headerRender, singinApiErr);
+const signinForm = new Form(formSignin, popupSignin, mainApi, headerRender, singinApiErr, undefined, resultsGroup, renderIcon);
 signinForm.setListeners(formSignin, signinForm.signin);
 
 const signupForm = new Form(formSignup, popupSignup, mainApi, undefined, singupApiErr, popupReg);
@@ -49,13 +50,13 @@ const newsCardList = new NewsCardList(mainCardListOptions);
 const renderResultsSearch = newsCardList.renderResults;
 const renderNewsError = newsCardList.renderError;
 const renderLoader = newsCardList.renderLoader;
-newsCardList.addshowMoreListener()
+newsCardList.addshowMoreListener();
 
 new FormValidator(formSignin, errorMessages, authPopupCloseButton)
 const signupFormValidator = new FormValidator(formSignup, errorMessages, regPopupCloseButton)
 const NewsFormValidator = signupFormValidator.addNewsFormValidator;
-
-const newsForm = new NewsForm(formNews, newsApi, newsCard, noResults, resultsSection, renderResultsSearch, renderNewsError, renderLoader, NewsFormValidator, cardMurkup);
+const newsFormParams = {formNews, newsApi, newsCard, noResults, resultsSection, renderResultsSearch, renderNewsError, renderLoader, NewsFormValidator, cardMurkup}
+const newsForm = new NewsForm(newsFormParams);
 newsForm.addListener();
 
 

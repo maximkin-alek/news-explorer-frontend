@@ -1,16 +1,15 @@
 export class NewsForm {
-  constructor(form, api, newsCard, noResults, resultsSection, renderResultsSearch, renderError, renderLoader, NewsFormValidator, cardMurkup) {
-
-    this._form = form;
-    this._api = api;
-    this._newsCard = newsCard;
-    this._noResults = noResults;
-    this._resultsSection = resultsSection;
-    this._renderResultsSearch = renderResultsSearch;
-    this._renderError = renderError;
-    this._renderLoader = renderLoader;
-    this._NewsFormValidator = NewsFormValidator;
-    this.cardMurkup = cardMurkup;
+  constructor(newsFormParams) {
+    this._form = newsFormParams.formNews;
+    this._api = newsFormParams.newsApi;
+    this._newsCard = newsFormParams.newsCard;
+    this._noResults = newsFormParams.noResults;
+    this._resultsSection = newsFormParams.resultsSection;
+    this._renderResultsSearch = newsFormParams.renderResultsSearch;
+    this._renderError = newsFormParams.renderNewsError;
+    this._renderLoader = newsFormParams.renderLoader;
+    this._NewsFormValidator = newsFormParams.NewsFormValidator;
+    this.cardMurkup = newsFormParams.cardMurkup;
 
     this.findNews = this.findNews.bind(this);
     this._removeAllNews = this._removeAllNews.bind(this);
