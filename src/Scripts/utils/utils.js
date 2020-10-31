@@ -46,7 +46,7 @@ function renderDates() {
   let currentDate  = new Date();
   let weekAgoDate = currentDate.getTime() - 604800000;
   weekAgoDate = new Date(weekAgoDate);
-  return [currentDate, weekAgoDate]
+  return [currentDate.toISOString(), weekAgoDate.toISOString()]
 }
 
 export { showMobileMenu, mobileMenuButton, splitResults, formatArticleDate, renderDates }
