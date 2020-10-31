@@ -89,4 +89,11 @@ export class MainApi {
     })
       .then((res) => this._handlePromise(res))
   }
+
+  logout() {
+    return fetch(`${this._url}/users/logout`, {
+      credentials: 'include',
+    })
+      .then((res) => this._handlePromise(res))
+  }
 }

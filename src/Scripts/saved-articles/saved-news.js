@@ -1,8 +1,6 @@
-import { Popup } from '../../Scripts/components/Popup'
 import { MainApi } from '../../Scripts/api/MainApi'
 import { Header } from '../../Scripts/components/Header'
 import { NewsCard } from '../../Scripts/components/NewsCard'
-import { NewsForm } from '../../Scripts/components/newsForm'
 import { NewsCardList } from '../../Scripts/components/NewsCardList'
 import { Articles } from '../../Scripts/components/Articles'
 

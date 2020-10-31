@@ -14,16 +14,18 @@ export class Header {
     this.setListeners = this.setListeners.bind(this);
     this._renderByColor = this._renderByColor.bind(this);
     this.removeListener = this.removeListener.bind(this);
+    this._logout = this._logout.bind(this);
   }
 
   render(iconColor, pageArticles) {
-       this._api.getUserData()
+    this._api.getUserData()
       .then((data) => {
 
         this.userName = data.name;
         let color = iconColor;
         const userButtons = document.querySelectorAll('.header__user-button')
         userButtons.forEach(element => {
+          this._setLogoutListener(element);
           element.textContent = data.name;
           this._renderByColor(element, color);
         })
@@ -39,7 +41,7 @@ export class Header {
         })
       })
       .catch((err) => {
-        if(pageArticles) {
+        if (pageArticles) {
 
           window.location.replace('https://maximkin-alek.github.io/news-explorer-frontend/index.html');
         }
@@ -55,11 +57,24 @@ export class Header {
       })
 
   }
+
+  _logout() {
+    this._api.logout()
+      .then(() => {
+        window.location.replace('http://localhost:8080');
+      })
+      .catch((err) => alert(err));
+  }
+
   setListeners(theme, header, logo) {
     this._mobileMenuButton.addEventListener('click', () => this._showMobileMenu(theme, header, logo));
   };
   removeListener(theme, header, logo) {
     this._mobileMenuButton.removeEventListener('click', () => this._showMobileMenu(theme, header, logo));
+  }
+
+  _setLogoutListener(elem) {
+    elem.addEventListener('click', this._logout);
   }
 
   _renderByColor(element, iconColor) {
