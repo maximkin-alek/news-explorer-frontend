@@ -61,7 +61,7 @@ export class Header {
   _logout() {
     this._api.logout()
       .then(() => {
-        window.location.replace('http://localhost:8080');
+        window.location.replace('https://maximkin-alek.github.io/news-explorer-frontend/index.html');
       })
       .catch((err) => alert(err));
   }
