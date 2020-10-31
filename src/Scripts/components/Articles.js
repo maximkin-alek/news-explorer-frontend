@@ -99,5 +99,4 @@ export class Articles {
     return [keywordOne, keywordTwo, keywordThree];
   }
 
-
 }
