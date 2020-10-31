@@ -2,6 +2,7 @@
 @import url(./__photo/about__photo.css);
 @import url(./__title/about__title.css);
 @import url(./__description/about__description.css);
+@import url(./__photo-item/about__photo-item.css);
 .about {
   max-width: 100%;
   min-height: 624px;

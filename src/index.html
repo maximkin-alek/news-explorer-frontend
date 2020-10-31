@@ -57,7 +57,6 @@
           >
         </li>
         <li class="header__list-item user-item">
-          <!-- Для отображения кнопок необходимо использовать модификатор button_isVisible -->
           <button
             class="button button_isVisible header__button header__user-button"
           >
@@ -125,28 +124,29 @@
     </section>
 
     <section class="about">
-      <picture class="about__photo">
+      <picture class="about__photo-item">
         <source
+        class="about__photo-item"
           media="(max-width: 550px)"
-          srcset="<%= require('./images/image-320px.png') %>"
+          srcset="<%= require('./images/about-1.jpg') %>"
         />
         <source
+        class="about__photo-item"
           media="(max-width: 950px)"
-          srcset="<%= require('./images/image-03.png') %>"
+          srcset="<%= require('./images/about-2.jpg') %>"
         />
 
-        <img src="<%= require('./images/about.png') %>" alt="фото автора" />
+        <img class="about__photo-item" src="<%= require('./images/about-3.jpg') %>" alt="фото автора" />
       </picture>
 
       <div class="about__group">
         <h2 class="subtitle about__title">Об авторе</h2>
         <p class="about__description">
-          Это блок с описанием автора проекта. Здесь следует указать, как вас
-          зовут, чем вы занимаетесь, какими технологиями разработки владеете.
+          Привет, меня зовут Александр, и совсем недавно я закончил курс веб-разработки на Яндекс Практикуме. Этот сайт - моя дипломная работа. На нем можно найти новостные статьи по ключевым словам и сохранить их в личном кабинете. Подробнее с функционалом и кодом можно ознакомиться в репозитории на Github.
         </p>
         <p class="about__description">
-          Также можно рассказать о процессе обучения в Практикуме, чему вы тут
-          научились, и чем можете помочь потенциальным заказчикам.
+          <!-- За 9 месяцев учебы мой внутренний мир стал богаче и пополнился навыками работы с HTML, CSS, JS, основами бекэнда на NodeJS. Мы изучили работу с системами контроля версий Git на примере github, получили навыки работы с командной строкой, ругулярными выражениями, базами данных. Не без труда аучились настраивать вебпак и остальную инфраструктуру проекта.
+          Теперь моей задачей является углубление знаний, изучение популярных фреймворков и поиск работы в сфере веб-разработки. -->
         </p>
       </div>
     </section>
