@@ -1,0 +1,12 @@
+.popup-signup__duble-error {
+  position: relative;
+  top: 30px;
+  width: 200px;
+  margin: -40px auto;
+}
+
+@media screen and (max-width: 540px) {
+  .popup-signup__duble-error {
+    top: 20px;
+  }
+}

@@ -1,0 +1,7 @@
+.header__link.header__link_white-theme {
+  color: #1A1B22;
+}
+
+.header__link.header__link_white-theme::after {
+  background: #1A1B22;
+}

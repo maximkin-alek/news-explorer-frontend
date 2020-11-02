@@ -1,0 +1,21 @@
+.header__link.header__link_isActive {
+  color: white;
+}
+
+.header__link_isActive::after {
+  display: block;
+  position: absolute;
+  content: "";
+  height: 3px;
+  width: 100%;
+  background-color: white;
+  left: 0;
+  top: 50px;
+  color: white;
+}
+
+@media screen and (max-width: 1200px) {
+  .header__link_isActive::after {
+    top: 43px;
+  }
+}

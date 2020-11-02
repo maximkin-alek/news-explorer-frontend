@@ -1,0 +1,14 @@
+.about__title {
+  margin: 0;
+}
+
+@media screen and (max-width: 950px) {
+  .about__title {
+    line-height: 40px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .about__title {
+    margin-top: 24px;
+  }
+}

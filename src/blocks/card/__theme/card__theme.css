@@ -1,0 +1,34 @@
+.card__theme {
+  width: 88px;
+  height: 40px;
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  background: #FFFFFF;
+  border-radius: 10px;
+  color: black;
+  font-family: Roboto, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+  margin: 0;
+}
+
+@media screen and (max-width: 800px) {
+  .card__theme {
+    top: 8px;
+    left: 8px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .card__theme {
+    top: 16px;
+    left: 16px;
+  }
+}

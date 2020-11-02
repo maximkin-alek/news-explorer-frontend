@@ -1,0 +1,18 @@
+.about__group {
+  max-width: 600px;
+  padding-left: 56px;
+  padding-top: 51px;
+}
+
+@media screen and (max-width: 950px) {
+  .about__group {
+    max-width: 424px;
+    padding-left: 32px;
+    padding-top: 0;
+  }
+}
+@media screen and (max-width: 550px) {
+  .about__group {
+    padding: 16px;
+  }
+}

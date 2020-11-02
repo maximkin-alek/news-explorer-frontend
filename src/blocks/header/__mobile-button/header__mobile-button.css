@@ -1,0 +1,16 @@
+@import url(./_white-theme/header__mobile-button_white-theme.css);
+@import url(./_open/header__mobile-button_open.css);
+
+.header__mobile-button {
+  width: 24px;
+  height: 24px;
+  background-image: url(../../../images/mobile-menu-closed.svg);
+  display: none;
+}
+
+@media screen and (max-width: 650px) {
+  .header__mobile-button {
+    display: block;
+    cursor: pointer;
+  }
+}

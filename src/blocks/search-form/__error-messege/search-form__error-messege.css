@@ -1,0 +1,21 @@
+.search-form__error-messege {
+  position: absolute;
+  top: 135px;
+  left: 5px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 800px) {
+  .search-form__error-messege {
+    top: 115px;
+    left: 5px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .search-form__error-messege {
+    top: 35px;
+    left: 20px;
+  }
+}

@@ -1,0 +1,14 @@
+.results__button {
+  width: 288px;
+  height: 64px;
+  color: #1A1B22;
+  background: #FFFFFF;
+  border-radius: 80px;
+  margin: 64px auto 80px;
+  transition: opacity 0.3s ease-in-out;
+  border: none;
+}
+
+.results__button:hover {
+  opacity: 0.9;
+}

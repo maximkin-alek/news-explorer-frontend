@@ -1,0 +1,21 @@
+@import url(./__subtitle/search__subtitle.css);
+.search {
+  background-image: url(../../images/georgia-de-lotz--UsJoNxLaNo-unsplash.png);
+  min-height: 570px;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 800px) {
+  .search {
+    min-height: 440px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .search {
+    min-height: 536px;
+  }
+}

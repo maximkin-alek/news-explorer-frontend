@@ -1,0 +1,23 @@
+@import url(./__text/articles__text.css);
+@import url(./__subtitle/articles__subtitle.css);
+@import url(./__keywords/articles__keywords.css);
+@import url(./__keyword/articles__keyword.css);
+@import url(./__card-group/articles__card-group.css);
+.articles {
+  max-width: 100%;
+  background: white;
+  padding-left: 104px;
+  padding-bottom: 62px;
+}
+
+@media screen and (max-width: 800px) {
+  .articles {
+    padding-left: 40px;
+    padding-bottom: 48px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .articles {
+    padding-left: 0;
+  }
+}
