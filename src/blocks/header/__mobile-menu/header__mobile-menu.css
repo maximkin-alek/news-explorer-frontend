@@ -4,15 +4,16 @@
   width: 100%;
   position: absolute;
   left: 0;
-  top: 56px;
+  top: -250px;
   background-color: black;
   z-index: 2;
   height: 230px;
   margin: 0;
-  display: none;
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
   padding: 24px 16px 24px;
   box-sizing: border-box;
+  transition: top .4s, transform .6s;
 }
