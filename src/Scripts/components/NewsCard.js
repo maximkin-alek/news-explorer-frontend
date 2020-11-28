@@ -10,10 +10,12 @@ export class NewsCard {
     this._removeListener = this._removeListener.bind(this);
     this.likeArticle = this.likeArticle.bind(this);
   }
+
   create(obj, cardMurkup, keyword) {
     const elem = document.createElement('div');
     elem.insertAdjacentHTML('afterbegin', cardMurkup);
     const murkup = elem.firstElementChild;
+
     if (obj.url !== undefined) { murkup.href = obj.url; } else { murkup.href = obj.link; }
     if (keyword !== undefined) { murkup.dataset.keyword = keyword; }
 
@@ -23,7 +25,6 @@ export class NewsCard {
         cardImage.src = obj.urlToImage
       }
     }
-
 
     const cardDate = murkup.querySelector('.card__date');
     if (obj.publishedAt === undefined) { cardDate.textContent = this._formatArticleDate(obj.date) } else {

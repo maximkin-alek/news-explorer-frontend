@@ -14,23 +14,41 @@ export class Articles {
     this.showArticles = this.showArticles.bind(this);
     this.renderArticlesInfo = this.renderArticlesInfo.bind(this);
     this._renderKeywords = this.renderKeywords.bind(this);
+    this.__updateDataArticles = this._updateDataArticles.bind(this);
   }
 
   showArticles() {
     this._api.getArticles().then((data) => {
 
-      data.data.forEach((elem) => {
-        const savedCard = this._createCard(elem, this._articleMurkup);
-        const deleteIcon = savedCard.querySelector('.card__delete-icon');
-        this._addListenerDeleteCard(deleteIcon);
-        this._savedArticles.push(savedCard);
-        this._keywordsArr.push(elem.keyword);
-      });
+      this.__updateDataArticles(data.data);
       this.renderArticlesInfo();
 
       this._renderSavedArticles(this._savedArticlesContainer, this._savedArticles);
     })
       .catch(err => console.log(err));
+  }
+
+  _updateDataArticles(data) {
+    
+    data.forEach((elem) => {
+      const savedCard = this._createCard(elem, this._articleMurkup);
+      const deleteIcon = savedCard.querySelector('.card__delete-icon');
+      this._addListenerDeleteCard(deleteIcon);
+
+      this._savedArticles.push(savedCard);
+      this._keywordsArr.push(elem.keyword);
+
+      deleteIcon.addEventListener('click', () => {
+        this._api.getArticles().then((data) => {
+          setTimeout(this.__updateDataArticles(data.data), 1000)
+
+          this.renderArticlesInfo();
+        })
+          .catch(err => console.log(err));
+      });
+
+
+    });
   }
 
   renderArticlesInfo() {
@@ -43,7 +61,7 @@ export class Articles {
         // копия для преобразования в строку и обратно
         let articlesLength = articlesQuantity;
         // взять последнюю цифру
-        if (articlesLength >21) {
+        if (articlesLength > 21) {
           articlesLength = articlesLength.toString();
           articlesLength = articlesLength[articlesLength.length - 1];
           articlesLength = Number(articlesLength);
