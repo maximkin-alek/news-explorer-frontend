@@ -40,3 +40,6 @@
 
 ## Ссылка на github pages:
 https://maximkin-alek.github.io/news-explorer-frontend/
+
+## Ссылка на сайт:
+https://alex-newsexp.tk/
